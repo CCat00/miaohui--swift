@@ -8,50 +8,51 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class MHHomeParser: NSObject {
     
-    func requestNewData() -> () {
-        
-        
-        let headers: HTTPHeaders = [
-            "openUDID" : "iphone-CA54803B-58D0-41A3-88BD-850DD5EB6D93",
-            "jpushRegistrationID" : "1a1018970aa18886766",
-            "platform" : "iphone",
-            "ver" : "2.2.4.5",
-            "format" : "json",
+    private var headers: HTTPHeaders {
+        return [
             "timeSp" : "1476692647",
-            "deviceInfo" : "iPhone 6",
-            "pushToken" : "9e266fb0c0f42c47214dbb69507be7ed638bb985025a92e3ca12f4cdaded97c5",
             "sign" : "0e8cea7fd6faeac6bf0457cc8d32ac3f"
         ]
-        let para: Parameters = [
-            "page" : 1,
-            "size" : 20
+    }
+    
+    private var para: Parameters {
+        return [
+            "page" : page,
+            "size" : size
         ]
-        Alamofire.request("http://api.magicwe.com/Recommend/getHomeGoods", method: .post, parameters: para, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-            
-            switch response.result.isSuccess {
-            case true:
-                print(response.result.value)
-                // json(data)
-//                let resultDic = response.result.value as! Dictionary<>
-//                
-//                let allKey = resultDic.allKeys
-//                
-//                for key in allKey {
-//                    
-//                }
-                
-                
-            case false:
-                print(response.result.error)
-            }
-            
+    }
+
+    private var page = 1
+    private var size: Int {
+        return 20
+    }
+    
+    /// 下拉刷新
+    func requestNewData() -> () {
+        page = 1
+        self.requestData()
+    }
+    
+    
+    /// 上拉加载更多
+    func requestMoreData() -> () {
+        page += 1
+        self.requestData()
+    }
+    
+    /// 核心请求数据方法
+    private func requestData() {
+        MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (dic) in
             
         }
     }
-    func requestMoreData() -> () {
-        
-    }
 }
+
+
+
+
+
