@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HandyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-妙汇.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3D0AE1A7827005D81614DBF583D01917</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6ABF9F38A802D38A8AFE76A12D279C48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FDFCD091219198FD1637D7D4F7E83C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8DBF49F5980CCF051A458F57354A76B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE3F1B8ECF90FDCE852C052C6F02BE68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -41,7 +41,7 @@ class MHNetwork: NSObject {
                     completionHandler(nil)
                 }
             case false:
-                print(response.result.error)
+                print("response.result.error = \(response.result.error)")
                 completionHandler(nil)
             }
             
