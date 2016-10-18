@@ -37,11 +37,11 @@ struct MHBanner: HandyJSON{
 
 /*
  {
- "name": "新品",
- "url": "mwgoodstag://new",
- "icon": "http://image.app.magicwe.com/images/201606/1464762738571683270.png",
- "c": "http://image.app.magicwe.com/images/201609/1473674096960910726.png"
- }
+ "name": "热卖",
+ "url": "mwgoodstag://hot",
+ "icon": "http://image.app.magicwe.com/images/201606/1464762975951452271.png",
+ "image": "http://image.app.magicwe.com/images/201609/1473674109107929859.png"
+ },
  */
 /// 首页第二栏内容
 struct MHNavigator: HandyJSON {
@@ -150,28 +150,15 @@ struct MHHomeDataModel: HandyJSON {
     var promotions: [MHPromotion]?
     var goods: [MHGoods]?
     
-    mutating func mapping(mapper: HelpingMapper) {
-        
+//    mutating func mapping(mapper: HelpingMapper) {
+    
         // 指定 parent 字段用这个方法去解析
 //        mapper.specify(property: &banner) { (rawString) -> [MHBanner] in
 //            let parentNames = rawString.characters.split{$0 == "/"}.map(String.init)
 //            return (parentNames[0], parentNames[1])
 //        }
-    }
+//    }
 }
 
-//struct MHHomeDataModel: HandyJSON {
-
-    
-
-
-    
-//    // 指定 parent 字段用这个方法去解析
-//    mapper.specify(property: &banner) { (rawString) -> (String, String) in
-//    let parentNames = rawString.characters.split{$0 == "/"}.map(String.init)
-//    return (parentNames[0], parentNames[1])
-//    }
-
-//}
 
 

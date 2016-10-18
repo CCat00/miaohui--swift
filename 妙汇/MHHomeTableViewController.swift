@@ -15,6 +15,8 @@ class MHHomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupUI()
+        
         MHHomeParser().requestNewData { (homeDataModel) in
             
             self.homeData = homeDataModel
@@ -32,6 +34,13 @@ class MHHomeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Private
+    
+    private func setupUI() {
+        
+        self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
+    }
 
     // MARK: - Table view data source
 
@@ -41,22 +50,54 @@ class MHHomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if ((homeData?.goods?.count) != nil) {
-            return (homeData?.goods?.count)! //+ 4
+            return (homeData?.goods?.count)! + 4
         }
         return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath) as! MHGoodsTableViewCell
         
-        if ((homeData?.goods?.count) != nil) {
-            cell.model = (homeData?.goods?[indexPath.row])!
+        switch indexPath.row {
+        case 0: //轮播图cell
+            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell0")
+            return cell
+        case 1: //导航cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomeNavigatorTableViewCell", for: indexPath) as! MHHomeNavigatorTableViewCell
+            if ((homeData?.navigator) != nil) {
+                cell.models = (homeData?.navigator)!
+            }
+            return cell
+        case 2: //视野cell
+            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell2")
+            return cell
+        case 3: //广告cell
+            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell3")
+            return cell
+        default: //商品cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath) as! MHGoodsTableViewCell
+            if ((homeData?.goods?.count) != nil) {
+                cell.model = (homeData?.goods?[indexPath.row - 4])!
+            }
+            return cell
         }
-
-        return cell
     }
     
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0: //轮播图cell
+            return 180.0
+        case 1: //导航cell
+            return 100.0
+        case 2: //视野cell
+            return 150.0
+        case 3: //广告cell
+            return 200.0
+        default: //商品cell
+            return 250.0
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

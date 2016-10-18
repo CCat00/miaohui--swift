@@ -17,6 +17,12 @@
 		6843C4B71DB5BAF900CA881F /* MHHomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */; };
 		6843C4B91DB5BC0700CA881F /* MHHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4B81DB5BC0700CA881F /* MHHomeModel.swift */; };
 		6843C4BC1DB5BC8500CA881F /* MHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4BB1DB5BC8500CA881F /* MHNetwork.swift */; };
+		68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */; };
+		68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */; };
+		68BD0D5E1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */; };
+		68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */; };
+		68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D601DB62B70000BB94B /* MHConst.swift */; };
+		68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D631DB62F73000BB94B /* MHExtension.swift */; };
 		AF8723B8E24D9E1E8F1F4F60 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC5B976203B5D1AB84F385 /* Pods___.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +42,12 @@
 		6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeParser.swift; sourceTree = "<group>"; };
 		6843C4B81DB5BC0700CA881F /* MHHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeModel.swift; sourceTree = "<group>"; };
 		6843C4BB1DB5BC8500CA881F /* MHNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHNetwork.swift; sourceTree = "<group>"; };
+		68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeNavigatorTableViewCell.swift; sourceTree = "<group>"; };
+		68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHHomeNavigatorTableViewCell.xib; sourceTree = "<group>"; };
+		68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHNavItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHNavItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		68BD0D601DB62B70000BB94B /* MHConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHConst.swift; sourceTree = "<group>"; };
+		68BD0D631DB62F73000BB94B /* MHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHExtension.swift; sourceTree = "<group>"; };
 		FAFC5B976203B5D1AB84F385 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +112,7 @@
 				6843C49A1DB4D87F00CA881F /* LaunchScreen.storyboard */,
 				6843C49D1DB4D87F00CA881F /* Info.plist */,
 				6843C4AB1DB5B52700CA881F /* PrefixHeader.pch */,
+				68BD0D601DB62B70000BB94B /* MHConst.swift */,
 			);
 			name = supportFiles;
 			sourceTree = "<group>";
@@ -139,6 +152,7 @@
 		6843C4A91DB5B4B300CA881F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				68BD0D621DB62F5C000BB94B /* Extension */,
 				6843C4BA1DB5BC6200CA881F /* Network */,
 			);
 			name = Util;
@@ -164,6 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				6843C4B21DB5B83A00CA881F /* MHGoodsTableViewCell.swift */,
+				68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */,
+				68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */,
+				68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */,
+				68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -190,6 +208,14 @@
 				6843C4BB1DB5BC8500CA881F /* MHNetwork.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		68BD0D621DB62F5C000BB94B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				68BD0D631DB62F73000BB94B /* MHExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		BF2E18DD2EA09629F21A7565 /* Pods */ = {
@@ -267,7 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6843C49C1DB4D87F00CA881F /* LaunchScreen.storyboard in Resources */,
+				68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
+				68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */,
 				6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +360,11 @@
 				6843C4B71DB5BAF900CA881F /* MHHomeParser.swift in Sources */,
 				6843C4BC1DB5BC8500CA881F /* MHNetwork.swift in Sources */,
 				6843C4B91DB5BC0700CA881F /* MHHomeModel.swift in Sources */,
+				68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */,
+				68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */,
 				6843C4AE1DB5B66900CA881F /* MHBaseNavController.swift in Sources */,
+				68BD0D5E1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift in Sources */,
+				68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */,
 				6843C4B01DB5B68900CA881F /* MHHomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
