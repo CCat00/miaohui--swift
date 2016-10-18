@@ -9,7 +9,21 @@
 import UIKit
 
 class MHGoodsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var goodsImg: UIImageView!
+    @IBOutlet weak var goodsName: UILabel!
+    @IBOutlet weak var goodsPrice: UILabel!
+    
+    var model: MHGoods {
+        set(newValue) {
+            goodsName.text = newValue.goods_name
+            goodsPrice.text = "¥".appending(newValue.miaohui_price!)
+        }
+        get {
+            return self.model
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

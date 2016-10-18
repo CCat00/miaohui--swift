@@ -30,9 +30,10 @@ class MHNetwork: NSObject {
             
             switch response.result.isSuccess {
             case true:
-                print("response success. \(response.result.value)")
+                //print("response success.")
                 
                 if let value = response.result.value {
+                    
                     let json = JSON(value)
                     let dic = json.dictionary
                     completionHandler(dic)

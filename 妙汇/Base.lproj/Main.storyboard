@@ -40,7 +40,7 @@
                                     <frame key="frameInset" width="375" height="235"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Yp-hK7">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Yp-hK7">
                                             <color key="backgroundColor" red="0.80392156859999997" green="0.93725490199999995" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="130" id="ug8-yc-JfO"/>
@@ -62,8 +62,13 @@
                                                 <constraint firstAttribute="height" constant="1" id="IZe-6C-jMT"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-Gc-7gd">
+                                            <state key="normal" image="wodeshoucang"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="tkT-BD-KVP" firstAttribute="top" secondItem="XNg-Gc-7gd" secondAttribute="bottom" constant="20" id="2Jh-gO-FDn"/>
+                                        <constraint firstAttribute="trailing" secondItem="XNg-Gc-7gd" secondAttribute="trailing" constant="20" id="3xQ-SC-N5J"/>
                                         <constraint firstItem="z0e-Yp-hK7" firstAttribute="centerX" secondItem="XAu-WK-cHu" secondAttribute="centerX" id="4cM-Yj-ZYX"/>
                                         <constraint firstItem="tkT-BD-KVP" firstAttribute="leading" secondItem="XAu-WK-cHu" secondAttribute="leading" constant="12" id="6k1-0I-tp1"/>
                                         <constraint firstItem="ExX-EW-e75" firstAttribute="leading" secondItem="tkT-BD-KVP" secondAttribute="leading" id="9rZ-e0-udJ"/>
@@ -77,6 +82,11 @@
                                         <constraint firstAttribute="trailing" secondItem="tkT-BD-KVP" secondAttribute="trailing" constant="12" id="twD-FG-oDO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="goodsImg" destination="z0e-Yp-hK7" id="VVA-f9-Yvf"/>
+                                    <outlet property="goodsName" destination="tkT-BD-KVP" id="xUo-bC-0Vn"/>
+                                    <outlet property="goodsPrice" destination="ExX-EW-e75" id="Qew-vf-UIp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,4 +136,7 @@
             <point key="canvasLocation" x="-1190" y="-242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wodeshoucang" width="34" height="34"/>
+    </resources>
 </document>

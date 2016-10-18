@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import HandyJSON
 
 class MHHomeParser: NSObject {
     
@@ -32,22 +33,29 @@ class MHHomeParser: NSObject {
     }
     
     /// 下拉刷新
-    func requestNewData() -> () {
+    func requestNewData(handler: @escaping (MHHomeDataModel?) -> Void) -> () {
         page = 1
-        self.requestData()
+        self.requestData(handler)
     }
     
     
     /// 上拉加载更多
-    func requestMoreData() -> () {
+    func requestMoreData(handler: @escaping (MHHomeDataModel?) -> Void) -> () {
         page += 1
-        self.requestData()
+        self.requestData(handler)
     }
     
     /// 核心请求数据方法
-    private func requestData() {
+    private func requestData(_ handler: @escaping (MHHomeDataModel?) -> Void) {
         MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (dic) in
-            
+            if (dic != nil) {
+                let listDic = dic!["list"]?.dictionaryObject
+                let objDic = NSDictionary.init(dictionary: listDic!, copyItems: false)
+                let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: objDic)
+                handler(list)
+            } else {
+                handler(nil)
+            }
         }
     }
 }

@@ -9,11 +9,17 @@
 import UIKit
 
 class MHHomeTableViewController: UITableViewController {
+    
+    var homeData: MHHomeDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MHHomeParser().requestNewData()
+        MHHomeParser().requestNewData { (homeDataModel) in
+            
+            self.homeData = homeDataModel
+            self.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,14 +40,19 @@ class MHHomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if ((homeData?.goods?.count) != nil) {
+            return (homeData?.goods?.count)! //+ 4
+        }
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath) as! MHGoodsTableViewCell
+        
+        if ((homeData?.goods?.count) != nil) {
+            cell.model = (homeData?.goods?[indexPath.row])!
+        }
 
         return cell
     }
