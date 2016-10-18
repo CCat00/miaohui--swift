@@ -12,9 +12,12 @@
 		6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4951DB4D87F00CA881F /* Main.storyboard */; };
 		6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4981DB4D87F00CA881F /* Assets.xcassets */; };
 		6843C49C1DB4D87F00CA881F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6843C49A1DB4D87F00CA881F /* LaunchScreen.storyboard */; };
+		AF8723B8E24D9E1E8F1F4F60 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC5B976203B5D1AB84F385 /* Pods___.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04418CB36C4CBD5AC4E38491 /* Pods-妙汇.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-妙汇.debug.xcconfig"; path = "Pods/Target Support Files/Pods-妙汇/Pods-妙汇.debug.xcconfig"; sourceTree = "<group>"; };
+		2BE9E656026BA555AE665F7E /* Pods-妙汇.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-妙汇.release.xcconfig"; path = "Pods/Target Support Files/Pods-妙汇/Pods-妙汇.release.xcconfig"; sourceTree = "<group>"; };
 		6843C48E1DB4D87F00CA881F /* 妙汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "妙汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6843C4911DB4D87F00CA881F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6843C4931DB4D87F00CA881F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		6843C4981DB4D87F00CA881F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6843C49B1DB4D87F00CA881F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6843C49D1DB4D87F00CA881F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFC5B976203B5D1AB84F385 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8723B8E24D9E1E8F1F4F60 /* Pods___.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142B07FF12E0ACF2D3654961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAFC5B976203B5D1AB84F385 /* Pods___.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6843C4851DB4D87F00CA881F = {
 			isa = PBXGroup;
 			children = (
 				6843C4901DB4D87F00CA881F /* 妙汇 */,
 				6843C48F1DB4D87F00CA881F /* Products */,
+				BF2E18DD2EA09629F21A7565 /* Pods */,
+				142B07FF12E0ACF2D3654961 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +69,17 @@
 		6843C4901DB4D87F00CA881F /* 妙汇 */ = {
 			isa = PBXGroup;
 			children = (
+				6843C4A61DB4DFCD00CA881F /* Controller */,
+				6843C4A51DB4DFC800CA881F /* View */,
+				6843C4A41DB4DFBF00CA881F /* Model */,
+				6843C4A31DB4DB9F00CA881F /* supportFiles */,
+			);
+			path = "妙汇";
+			sourceTree = "<group>";
+		};
+		6843C4A31DB4DB9F00CA881F /* supportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				6843C4911DB4D87F00CA881F /* AppDelegate.swift */,
 				6843C4931DB4D87F00CA881F /* ViewController.swift */,
 				6843C4951DB4D87F00CA881F /* Main.storyboard */,
@@ -61,7 +87,37 @@
 				6843C49A1DB4D87F00CA881F /* LaunchScreen.storyboard */,
 				6843C49D1DB4D87F00CA881F /* Info.plist */,
 			);
-			path = "妙汇";
+			name = supportFiles;
+			sourceTree = "<group>";
+		};
+		6843C4A41DB4DFBF00CA881F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6843C4A51DB4DFC800CA881F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6843C4A61DB4DFCD00CA881F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BF2E18DD2EA09629F21A7565 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04418CB36C4CBD5AC4E38491 /* Pods-妙汇.debug.xcconfig */,
+				2BE9E656026BA555AE665F7E /* Pods-妙汇.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6843C4A01DB4D87F00CA881F /* Build configuration list for PBXNativeTarget "妙汇" */;
 			buildPhases = (
+				514EB21B153B2CA9D36EFF1E /* [CP] Check Pods Manifest.lock */,
 				6843C48A1DB4D87F00CA881F /* Sources */,
 				6843C48B1DB4D87F00CA881F /* Frameworks */,
 				6843C48C1DB4D87F00CA881F /* Resources */,
+				A5780F1ED189565FE99C7F93 /* [CP] Embed Pods Frameworks */,
+				DE52C83DA49373BF1E86C60C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +156,7 @@
 					6843C48D1DB4D87F00CA881F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = NDXGPJ8CAV;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +191,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		514EB21B153B2CA9D36EFF1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5780F1ED189565FE99C7F93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-妙汇/Pods-妙汇-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE52C83DA49373BF1E86C60C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-妙汇/Pods-妙汇-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6843C48A1DB4D87F00CA881F /* Sources */ = {
@@ -259,27 +367,33 @@
 		};
 		6843C4A11DB4D87F00CA881F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04418CB36C4CBD5AC4E38491 /* Pods-妙汇.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NDXGPJ8CAV;
 				INFOPLIST_FILE = "妙汇/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ShouYueTechnology.miaohui.demo.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		6843C4A21DB4D87F00CA881F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BE9E656026BA555AE665F7E /* Pods-妙汇.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NDXGPJ8CAV;
 				INFOPLIST_FILE = "妙汇/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ShouYueTechnology.miaohui.demo.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -302,6 +416,7 @@
 				6843C4A21DB4D87F00CA881F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
