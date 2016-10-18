@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MHGoodsTableViewCell: UITableViewCell {
     
@@ -16,6 +17,7 @@ class MHGoodsTableViewCell: UITableViewCell {
     
     var model: MHGoods {
         set(newValue) {
+            goodsImg.kf.setImage(with: URL(string: newValue.list_img!))
             goodsName.text = newValue.goods_name
             goodsPrice.text = "¥".appending(newValue.miaohui_price!)
         }
