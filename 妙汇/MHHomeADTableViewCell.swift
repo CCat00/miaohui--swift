@@ -27,7 +27,9 @@ class MHHomeADTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        adScrollView.currentPageIndicatorTintColor = MH_MAIN_COLOR_YELLOW
+        adScrollView.pageIndicatorTintColor = UIColor.lightGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

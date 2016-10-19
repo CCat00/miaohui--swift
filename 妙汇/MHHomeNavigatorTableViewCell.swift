@@ -33,7 +33,7 @@ class MHHomeNavigatorTableViewCell: UITableViewCell, UICollectionViewDataSource,
         collectionView.register(UINib.init(nibName: "MHNavItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MHNavItemCollectionViewCell")
         
         pageControl.pageIndicatorTintColor = UIColor.lightGray
-        pageControl.currentPageIndicatorTintColor = UIColor.hexColor(hex: 0xEDB329)
+        pageControl.currentPageIndicatorTintColor = MH_MAIN_COLOR_YELLOW
     }
 
     // MARK: - UICollectionViewDataSource
