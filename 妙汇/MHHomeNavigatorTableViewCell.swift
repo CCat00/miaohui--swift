@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 首页第二栏
 class MHHomeNavigatorTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!

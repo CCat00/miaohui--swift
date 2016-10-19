@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+/// 首页商品cell
 class MHGoodsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var goodsImg: UIImageView!

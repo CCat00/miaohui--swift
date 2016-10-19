@@ -67,6 +67,7 @@ class MHHomeTableViewController: UITableViewController {
         // tableView
         self.tableView.register(UINib.init(nibName: "MHHomeADTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeADTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
+        self.tableView.register(UINib.init(nibName: "MHHomePromotionsTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomePromotionsTableViewCell")
     }
 
     // MARK: - Table view data source
@@ -102,7 +103,10 @@ class MHHomeTableViewController: UITableViewController {
             let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell2")
             return cell
         case 3: //广告cell
-            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell3")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomePromotionsTableViewCell", for: indexPath) as! MHHomePromotionsTableViewCell
+//            if ((homeData?.navigator) != nil) {
+//                cell.models = (homeData?.navigator)!
+//            }
             return cell
         default: //商品cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath) as! MHGoodsTableViewCell
@@ -122,9 +126,9 @@ class MHHomeTableViewController: UITableViewController {
         case 1: //导航cell
             return 100.0
         case 2: //视野cell
-            return 150.0
+            return 80.0
         case 3: //广告cell
-            return 200.0
+            return 170.0
         default: //商品cell
             return 250.0
         }

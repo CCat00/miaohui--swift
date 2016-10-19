@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 首页轮播图cell
 class MHHomeADTableViewCell: UITableViewCell {
 
     @IBOutlet weak var adScrollView: MHADScrollView!
