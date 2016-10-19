@@ -104,9 +104,9 @@ class MHHomeTableViewController: UITableViewController {
             return cell
         case 3: //广告cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomePromotionsTableViewCell", for: indexPath) as! MHHomePromotionsTableViewCell
-//            if ((homeData?.navigator) != nil) {
-//                cell.models = (homeData?.navigator)!
-//            }
+            if ((homeData?.promotions) != nil) {
+                cell.pros = (homeData?.promotions)!
+            }
             return cell
         default: //商品cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeGoodsCell", for: indexPath) as! MHGoodsTableViewCell

@@ -11,9 +11,22 @@ import UIKit
 /// 首页促销cell（3个固定商品）
 class MHHomePromotionsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var leftItem: MHHomePromotionsItem!
+    @IBOutlet weak var centerItem: MHHomePromotionsItem!
+    @IBOutlet weak var rightItem: MHHomePromotionsItem!
+    
+    var pros: [MHPromotion]? {
+        didSet {
+            if pros != nil {
+                leftItem.pro = pros![0]
+                centerItem.pro = pros![1]
+                rightItem.pro = pros![2]
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
