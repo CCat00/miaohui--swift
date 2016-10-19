@@ -38,7 +38,7 @@ class MHHomeTableViewController: UITableViewController {
     // MARK: - Private
     
     private func setupUI() {
-        
+        self.tableView.register(UINib.init(nibName: "MHHomeADTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeADTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
     }
 
@@ -59,8 +59,12 @@ class MHHomeTableViewController: UITableViewController {
         
         switch indexPath.row {
         case 0: //轮播图cell
-            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell0")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomeADTableViewCell", for: indexPath) as! MHHomeADTableViewCell
+            if ((homeData?.banner) != nil) {
+                cell.models = (homeData?.banner)!
+            }
             return cell
+
         case 1: //导航cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomeNavigatorTableViewCell", for: indexPath) as! MHHomeNavigatorTableViewCell
             if ((homeData?.navigator) != nil) {
