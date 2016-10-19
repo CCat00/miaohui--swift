@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fre-um-Bl2">
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -30,7 +30,7 @@
             <constraints>
                 <constraint firstItem="Ji6-Im-4lv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12.5" id="GBQ-e7-k7n"/>
                 <constraint firstItem="Ji6-Im-4lv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Oar-Qi-dQU"/>
-                <constraint firstItem="fre-um-Bl2" firstAttribute="top" secondItem="Ji6-Im-4lv" secondAttribute="bottom" constant="5" id="eUC-2D-z3w"/>
+                <constraint firstItem="fre-um-Bl2" firstAttribute="top" secondItem="Ji6-Im-4lv" secondAttribute="bottom" constant="3" id="eUC-2D-z3w"/>
                 <constraint firstItem="fre-um-Bl2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="wRl-Ls-a2l"/>
             </constraints>
             <size key="customSize" width="86" height="100"/>

@@ -54,11 +54,23 @@ class MHHomeNavigatorTableViewCell: UITableViewCell, UICollectionViewDataSource,
     }
     
     // MARK: - 
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
+            let tru = scrollView.contentOffset.x.truncatingRemainder(dividingBy: SCREEN_WIDTH)
             let page = Int(scrollView.contentOffset.x / SCREEN_WIDTH)
-            pageControl.currentPage = page
+            if tru > 0 {
+              pageControl.currentPage = page + 1
+            } else {
+                pageControl.currentPage = page
+            }
+           
         }
+    }
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+//        if scrollView == collectionView {
+//            let page = Int(scrollView.contentOffset.x / SCREEN_WIDTH)
+//            pageControl.currentPage = page
+//        }
     }
     
 }

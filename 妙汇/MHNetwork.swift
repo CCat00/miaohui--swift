@@ -49,7 +49,6 @@ class MHNetwork: NSObject {
         }
     }
     
-    // MARK: -
     // MARK: - Private
     
     private static func defaultHeaders() -> HTTPHeaders {
