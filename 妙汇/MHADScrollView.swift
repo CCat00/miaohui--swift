@@ -219,10 +219,6 @@ class MHADScrollView: UIView, UIScrollViewDelegate{
     
     private func updateContent() {
         
-        if scrollView!.contentOffset.x == 0 {
-            return
-        }
-        
         guard imgCount > 1 else {
             return
         }

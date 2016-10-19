@@ -38,6 +38,33 @@ class MHHomeTableViewController: UITableViewController {
     // MARK: - Private
     
     private func setupUI() {
+        
+        // navigationBar
+        let leftBarBtn = UIButton.init(type: .custom)
+        leftBarBtn.frame = CGRect.init(x: 0, y: 0, width: 30.0, height: 30.0)
+        leftBarBtn.setBackgroundImage(UIImage.init(named: "profile_touxiang"), for: .normal)
+        leftBarBtn.addTarget(self, action: #selector(MHHomeTableViewController.leftNavBarAction), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBarBtn)
+        
+        let centerSearchBtn = UIButton.init(type: .custom)
+        centerSearchBtn.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH - 120, height: 30.0)
+        centerSearchBtn.setImage(UIImage.init(named: "home_search"), for: .normal)
+        centerSearchBtn.setTitle(" 搜索妙汇创意商品", for: .normal)
+        centerSearchBtn.setTitleColor(UIColor.black, for: .normal)
+        centerSearchBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
+        centerSearchBtn.backgroundColor = MH_MAIN_COLOR_YELLOW
+        centerSearchBtn.layer.cornerRadius = 5.0
+        centerSearchBtn.layer.masksToBounds = true
+        centerSearchBtn.addTarget(self, action: #selector(MHHomeTableViewController.searchAction), for: .touchUpInside)
+        self.navigationItem.titleView = centerSearchBtn
+        
+        let rightBarBtn = UIButton.init(type: .custom)
+        rightBarBtn.frame = CGRect.init(x: 0, y: 0, width: 25.0, height: 25.0)
+        rightBarBtn.setBackgroundImage(UIImage.init(named: "nav_right"), for: .normal)
+        rightBarBtn.addTarget(self, action: #selector(MHHomeTableViewController.rightNavBarAction), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: rightBarBtn)
+        
+        // tableView
         self.tableView.register(UINib.init(nibName: "MHHomeADTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeADTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
     }
@@ -102,6 +129,24 @@ class MHHomeTableViewController: UITableViewController {
             return 250.0
         }
     }
+    
+    // MARK: - Action
+    
+    /// 个人页面
+    @objc private func leftNavBarAction() {
+        
+    }
+    
+    /// 搜索框
+    @objc private func searchAction() {
+        
+    }
+
+    /// 扫一扫
+    @objc private func rightNavBarAction() {
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
