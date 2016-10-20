@@ -74,8 +74,6 @@ class MHHomePromotionsItem: UIView {
                 
             }
         }
-
-        
     }
     
     private func showCountdown() {
