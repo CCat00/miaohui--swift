@@ -123,16 +123,21 @@ class MHHomePromotionsItem: UIView {
         
         if timestmp > (24*60*60) {
             //大于一天
-            
             return "\(Int(timestmp / (24*60*60)))天"
         }
         
-        let dateFormatter = DateFormatter.init()
-        dateFormatter.dateFormat = "HH:mm:ss"
+        let hours = Int(timestmp/(60.0*60.0))
+        let minutes = Int((timestmp - TimeInterval(hours*60*60))/60)
+        let seconds = Int(timestmp) - hours*60*60 - minutes*60
         
-        let date = Date.init(timeIntervalSince1970: timestmp)
-        
-        let dateString = dateFormatter.string(from: date)
+        let dateString = "\(hours.format(f: "02")):\(minutes.format(f: "02")):\(seconds.format(f: "02"))"
+    
         return dateString
+    }
+}
+
+extension Int {
+    func format(f: String) -> String {
+        return String(format: "%\(f)d", self)
     }
 }
