@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="MHHomeViewfieldTableViewCell" customModule="妙汇" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-ac-mVv">
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="1gG-nE-h5s"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZO-fW-mCM">
+                        <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="HMx-2X-HIF"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="viewField_homePage" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-Br-kqS"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlI-2D-cEG" customClass="MHVerticalADView" customModule="妙汇" customModuleProvider="target">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rZO-fW-mCM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="C3h-ys-WgC"/>
+                    <constraint firstItem="Le7-Br-kqS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CRc-16-MTH"/>
+                    <constraint firstItem="dlI-2D-cEG" firstAttribute="leading" secondItem="rZO-fW-mCM" secondAttribute="trailing" id="KdN-aK-gI6"/>
+                    <constraint firstItem="vWX-ac-mVv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ObT-KS-CmW"/>
+                    <constraint firstItem="vWX-ac-mVv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SEc-kS-sFr"/>
+                    <constraint firstItem="rZO-fW-mCM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SV0-fl-mPU"/>
+                    <constraint firstItem="Le7-Br-kqS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="V2k-2e-AS3"/>
+                    <constraint firstItem="vWX-ac-mVv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ayW-uQ-Ol8"/>
+                    <constraint firstItem="dlI-2D-cEG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="bAV-fF-Ajv"/>
+                    <constraint firstAttribute="trailing" secondItem="dlI-2D-cEG" secondAttribute="trailing" id="cqi-KO-sBY"/>
+                    <constraint firstItem="rZO-fW-mCM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="80" id="hCH-0O-YNe"/>
+                    <constraint firstAttribute="bottom" secondItem="dlI-2D-cEG" secondAttribute="bottom" id="o1W-a2-Z7u"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="vericalADView" destination="dlI-2D-cEG" id="KJr-gQ-aA7"/>
+            </connections>
+            <point key="canvasLocation" x="-72" y="-130"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="viewField_homePage" width="45" height="21"/>
+    </resources>
+</document>

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "viewField_homePage.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "viewField_homePage.png",
       "scale" : "2x"
     },
     {

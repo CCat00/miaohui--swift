@@ -67,6 +67,7 @@ class MHHomeTableViewController: UITableViewController {
         // tableView
         self.tableView.register(UINib.init(nibName: "MHHomeADTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeADTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
+         self.tableView.register(UINib.init(nibName: "MHHomeViewfieldTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeViewfieldTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomePromotionsTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomePromotionsTableViewCell")
     }
 
@@ -100,7 +101,10 @@ class MHHomeTableViewController: UITableViewController {
             }
             return cell
         case 2: //视野cell
-            let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell2")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomeViewfieldTableViewCell", for: indexPath) as! MHHomeViewfieldTableViewCell
+            if ((homeData?.articles) != nil) {
+                cell.articles = (homeData?.articles)!
+            }
             return cell
         case 3: //广告cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "MHHomePromotionsTableViewCell", for: indexPath) as! MHHomePromotionsTableViewCell
