@@ -43,14 +43,14 @@ class MHHomePromotionsItem: UIView {
                 countdownType = .title
                 
                 let attributedText = NSMutableAttributedString.init(
-                    string: "¥" + pro!.shop_price! + "  ",
+                    string: "¥" + pro!.promote_price! + "  ",
                     attributes: [
                         NSFontAttributeName : UIFont.boldSystemFont(ofSize: 12.0),
                         NSForegroundColorAttributeName: UIColor.rgbColor(r: 222.0, g: 43.0, b: 48.0),
                         ])
                 
                 let oldPrice = NSAttributedString.init(
-                    string: " ¥" + pro!.promote_price!,
+                    string: " ¥" + pro!.shop_price!,
                     attributes: [
                         NSFontAttributeName : UIFont.systemFont(ofSize: 11.0),
                         NSForegroundColorAttributeName: UIColor.rgbColor(r: 178, g: 178, b: 178),
@@ -99,6 +99,18 @@ class MHHomePromotionsItem: UIView {
     var restTime: Int?
     
     private func jointCountdownString() -> NSAttributedString{
+        
+        if restTime! <= 0 {
+            
+            let endString = NSAttributedString.init(
+                string: "已结束",
+                attributes: [
+                    NSFontAttributeName : UIFont.systemFont(ofSize: 11.0),
+                    NSForegroundColorAttributeName: UIColor.rgbColor(r: 178, g: 178, b: 178),
+                ])
+            return endString
+        }
+        
         let attributedText = NSMutableAttributedString.init(
             string: "距离结束  ",
             attributes: [
