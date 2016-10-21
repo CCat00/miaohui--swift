@@ -13,3 +13,6 @@ let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
 let MH_MAIN_COLOR_YELLOW = UIColor.hexColor(hex: 0xFDBC37)
+
+
+let USE_NETWORK = false

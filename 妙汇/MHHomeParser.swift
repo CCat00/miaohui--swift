@@ -47,17 +47,44 @@ class MHHomeParser: NSObject {
     
     /// 核心请求数据方法
     private func requestData(_ handler: @escaping (MHHomeDataModel?) -> Void) {
-        MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (dic) in
-            if (dic != nil) {
-                let listDic = dic!["list"]?.dictionaryObject
-                let objDic = NSDictionary.init(dictionary: listDic!, copyItems: false)
-                let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: objDic)
-                handler(list)
-            } else {
-                handler(nil)
+        
+        if USE_NETWORK {
+            MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (dic) in
+                if (dic != nil) {
+                    let listDic = dic!["list"]?.dictionaryObject
+                    let objDic = NSDictionary.init(dictionary: listDic!, copyItems: false)
+                    let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: objDic)
+                    handler(list)
+                } else {
+                    handler(nil)
+                }
             }
         }
+        else {
+            
+            let jsonPath = Bundle.main.path(forResource: "home", ofType: ".json")
+            let jsonURL = URL.init(fileURLWithPath: jsonPath!)
+            
+            do {
+                let jsonData = try Data.init(contentsOf: jsonURL)
+                
+                let dic = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+                
+                
+                var dict = dic as! NSDictionary
+                dict = dict.object(forKey: "list") as! NSDictionary
+                let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: dict)
+                handler(list)
+                
+            } catch {
+                
+            }
+        }
+        
+  
     }
+    
+    
 }
 
 

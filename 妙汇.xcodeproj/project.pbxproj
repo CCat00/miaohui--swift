@@ -19,6 +19,13 @@
 		68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120C7F1DB85DEC000CA19D /* MHVerticalADView.swift */; };
 		68120C821DB86845000CA19D /* MHHomeViewfieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120C811DB86845000CA19D /* MHHomeViewfieldItem.swift */; };
 		68120C841DB8684F000CA19D /* MHHomeViewfieldItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68120C831DB8684F000CA19D /* MHHomeViewfieldItem.xib */; };
+		68120CAA1DB9BA37000CA19D /* MHRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120CA91DB9BA37000CA19D /* MHRefreshHeader.swift */; };
+		68120CAC1DB9BA45000CA19D /* MHRefreshNormalHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68120CAB1DB9BA45000CA19D /* MHRefreshNormalHeader.xib */; };
+		68120CAE1DB9BC32000CA19D /* MHRefreshCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120CAD1DB9BC32000CA19D /* MHRefreshCommon.swift */; };
+		68120CB01DB9C053000CA19D /* MHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120CAF1DB9C053000CA19D /* MHRefresh.swift */; };
+		68120CB21DB9E75C000CA19D /* MHRefreshBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120CB11DB9E75C000CA19D /* MHRefreshBase.swift */; };
+		6817E0341DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */; };
+		6817E0441DBA1E2800B9B6E7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 6817E0431DBA1E2800B9B6E7 /* home.json */; };
 		6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4911DB4D87F00CA881F /* AppDelegate.swift */; };
 		6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4951DB4D87F00CA881F /* Main.storyboard */; };
 		6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4981DB4D87F00CA881F /* Assets.xcassets */; };
@@ -53,6 +60,13 @@
 		68120C7F1DB85DEC000CA19D /* MHVerticalADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHVerticalADView.swift; sourceTree = "<group>"; };
 		68120C811DB86845000CA19D /* MHHomeViewfieldItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeViewfieldItem.swift; sourceTree = "<group>"; };
 		68120C831DB8684F000CA19D /* MHHomeViewfieldItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHHomeViewfieldItem.xib; sourceTree = "<group>"; };
+		68120CA91DB9BA37000CA19D /* MHRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshHeader.swift; sourceTree = "<group>"; };
+		68120CAB1DB9BA45000CA19D /* MHRefreshNormalHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHRefreshNormalHeader.xib; sourceTree = "<group>"; };
+		68120CAD1DB9BC32000CA19D /* MHRefreshCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshCommon.swift; sourceTree = "<group>"; };
+		68120CAF1DB9C053000CA19D /* MHRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefresh.swift; sourceTree = "<group>"; };
+		68120CB11DB9E75C000CA19D /* MHRefreshBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshBase.swift; sourceTree = "<group>"; };
+		6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshNormalHeader.swift; sourceTree = "<group>"; };
+		6817E0431DBA1E2800B9B6E7 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 		6843C48E1DB4D87F00CA881F /* 妙汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "妙汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6843C4911DB4D87F00CA881F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6843C4961DB4D87F00CA881F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +116,19 @@
 				68120C7F1DB85DEC000CA19D /* MHVerticalADView.swift */,
 			);
 			name = ADScrollView;
+			sourceTree = "<group>";
+		};
+		68120CA81DB9BA0C000CA19D /* PullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				68120CB11DB9E75C000CA19D /* MHRefreshBase.swift */,
+				68120CA91DB9BA37000CA19D /* MHRefreshHeader.swift */,
+				6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */,
+				68120CAB1DB9BA45000CA19D /* MHRefreshNormalHeader.xib */,
+				68120CAD1DB9BC32000CA19D /* MHRefreshCommon.swift */,
+				68120CAF1DB9C053000CA19D /* MHRefresh.swift */,
+			);
+			name = PullRefresh;
 			sourceTree = "<group>";
 		};
 		6843C4851DB4D87F00CA881F = {
@@ -179,6 +206,7 @@
 		6843C4A71DB5B49500CA881F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				68120CA81DB9BA0C000CA19D /* PullRefresh */,
 				68120C621DB706F8000CA19D /* ADScrollView */,
 			);
 			name = Vendor;
@@ -241,6 +269,7 @@
 		6843C4B51DB5BA9A00CA881F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6817E0431DBA1E2800B9B6E7 /* home.json */,
 				6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */,
 			);
 			name = Home;
@@ -339,12 +368,14 @@
 				6843C49C1DB4D87F00CA881F /* LaunchScreen.storyboard in Resources */,
 				68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */,
 				68120C7E1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.xib in Resources */,
+				6817E0441DBA1E2800B9B6E7 /* home.json in Resources */,
 				68120C841DB8684F000CA19D /* MHHomeViewfieldItem.xib in Resources */,
 				68120C741DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib in Resources */,
 				68120C681DB71C9D000CA19D /* MHHomeADTableViewCell.xib in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
 				68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */,
 				6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */,
+				68120CAC1DB9BA45000CA19D /* MHRefreshNormalHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,10 +434,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68120CB01DB9C053000CA19D /* MHRefresh.swift in Sources */,
 				68120C671DB71C9D000CA19D /* MHHomeADTableViewCell.swift in Sources */,
 				6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */,
 				6843C4B31DB5B83A00CA881F /* MHGoodsTableViewCell.swift in Sources */,
 				68120C761DB76B87000CA19D /* MHHomePromotionsItem.swift in Sources */,
+				68120CB21DB9E75C000CA19D /* MHRefreshBase.swift in Sources */,
 				68120C7D1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.swift in Sources */,
 				6843C4B71DB5BAF900CA881F /* MHHomeParser.swift in Sources */,
 				68120C641DB70715000CA19D /* MHADScrollView.swift in Sources */,
@@ -415,10 +448,13 @@
 				68120C7A1DB774E4000CA19D /* MHTabBarController.swift in Sources */,
 				68120C731DB764BA000CA19D /* MHHomePromotionsTableViewCell.swift in Sources */,
 				68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */,
+				68120CAE1DB9BC32000CA19D /* MHRefreshCommon.swift in Sources */,
 				68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */,
+				68120CAA1DB9BA37000CA19D /* MHRefreshHeader.swift in Sources */,
 				68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */,
 				68120C821DB86845000CA19D /* MHHomeViewfieldItem.swift in Sources */,
 				6843C4AE1DB5B66900CA881F /* MHBaseNavController.swift in Sources */,
+				6817E0341DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift in Sources */,
 				68BD0D5E1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift in Sources */,
 				68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */,
 				6843C4B01DB5B68900CA881F /* MHHomeTableViewController.swift in Sources */,

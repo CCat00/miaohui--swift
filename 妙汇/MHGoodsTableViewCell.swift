@@ -16,14 +16,12 @@ class MHGoodsTableViewCell: UITableViewCell {
     @IBOutlet weak var goodsName: UILabel!
     @IBOutlet weak var goodsPrice: UILabel!
     
-    var model: MHGoods {
-        set(newValue) {
-            goodsImg.kf.setImage(with: URL(string: newValue.list_img!))
-            goodsName.text = newValue.goods_name
-            goodsPrice.text = "¥".appending(newValue.miaohui_price!)
-        }
-        get {
-            return self.model
+    var model: MHGoods? {
+        didSet {
+            if model == nil {return}
+            goodsImg.kf.setImage(with: URL(string: model!.list_img!))
+            goodsName.text = model!.goods_name
+            goodsPrice.text = "¥".appending(model!.miaohui_price!)
         }
     }
     
