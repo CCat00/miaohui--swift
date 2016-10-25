@@ -22,20 +22,6 @@ class MHRefreshNormalHeader: MHRefreshHeader {
     
     // MARK: - Life cycle
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        self.setup()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        self.setup()
-//    }
-//    
-//    private func setup() {
-//        
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -59,7 +45,7 @@ class MHRefreshNormalHeader: MHRefreshHeader {
     override func changeRefreshState(state: MHRefreshState) {
         
         let oldState = refreshState
-//        print("MHRefreshNormalHeader set state. oldState = \(oldState), state = \(state)")
+        //print("MHRefreshNormalHeader set state. oldState = \(oldState), state = \(state)")
         if state == oldState {
             return
         }

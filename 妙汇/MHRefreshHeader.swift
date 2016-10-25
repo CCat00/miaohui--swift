@@ -28,7 +28,7 @@ class MHRefreshHeader: MHRefreshBase {
     }
     
     override func changeRefreshState(state: MHRefreshState) {
-//        print("MHRefreshHeader set state. oldState = \(refreshState), state = \(state)")
+        //print("MHRefreshHeader set state. oldState = \(refreshState), state = \(state)")
         if (state == .normal) && (refreshState != .refreshing) {
             super.changeRefreshState(state: state)
             return

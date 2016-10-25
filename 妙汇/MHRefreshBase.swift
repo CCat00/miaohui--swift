@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-//typealias MHRefreshFooterBlock = (MHRefreshNormalHeader) -> Void
-
 /// 刷新控件的基类
 class MHRefreshBase: UIView {
     
@@ -20,7 +17,6 @@ class MHRefreshBase: UIView {
     var scrollView: UIScrollView?
     var scrollViewEdgeInsets: UIEdgeInsets?
 
-    
     // MARK: - Life cycle
 
     override func willMove(toSuperview newSuperview: UIView?) {
