@@ -8,7 +8,11 @@
 
 import UIKit
 
+typealias MHRefreshHeaderBlock = (MHRefreshHeader) -> Void
+
 class MHRefreshHeader: MHRefreshBase {
+    
+    var refreshHeaderBlock: MHRefreshHeaderBlock?
     
     private var insetTDelta: CGFloat?
     
@@ -19,12 +23,8 @@ class MHRefreshHeader: MHRefreshBase {
         self.changeRefreshState(state: .refreshing)
     }
     
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-//    }
-    
     override func changeRefreshState(state: MHRefreshState) {
-        
+//        print("MHRefreshHeader set state. oldState = \(refreshState), state = \(state)")
         if (state == .normal) && (refreshState != .refreshing) {
             super.changeRefreshState(state: state)
             return
@@ -55,7 +55,7 @@ class MHRefreshHeader: MHRefreshBase {
                 },
                 completion: { (completed) in
                     //TODO:处理回调
-                    self.refreshBlock?()
+                    self.refreshHeaderBlock?(self as! MHRefreshNormalHeader)
             })
             
         }
@@ -104,6 +104,12 @@ class MHRefreshHeader: MHRefreshBase {
             print("即将刷新！！（偏移量够 && 手松开了）")
             self.beginRefreshing()
         }
+    }
+    
+    // MARK: - Public
+    
+    func endRefreshing() {
+        self.changeRefreshState(state: .normal)
     }
 }
 

@@ -57,17 +57,15 @@ class MHRefreshNormalHeader: MHRefreshHeader {
     override func changeRefreshState(state: MHRefreshState) {
         
         let oldState = refreshState
-        
+//        print("MHRefreshNormalHeader set state. oldState = \(oldState), state = \(state)")
         if state == oldState {
             return
         }
         super.changeRefreshState(state: state)
         
-        
         if state == .normal {
             if oldState == .refreshing {
                 refresh_arrow.transform = CGAffineTransform.identity
-                
                 UIView.animate(withDuration: MHRefreshAnimationDuration, animations: { 
                     
                     self.refresh_indicator.alpha = 0.0

@@ -8,34 +8,20 @@
 
 import UIKit
 
-typealias MHRefreshBlock = ()->Void
+
+//typealias MHRefreshFooterBlock = (MHRefreshNormalHeader) -> Void
 
 /// 刷新控件的基类
 class MHRefreshBase: UIView {
     
     // MARK: - Properties
     
-    var refreshBlock: MHRefreshBlock?
     var refreshState: MHRefreshState = .normal
     var scrollView: UIScrollView?
     var scrollViewEdgeInsets: UIEdgeInsets?
 
     
     // MARK: - Life cycle
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        self.setup()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        self.setup()
-//    }
-//    
-//    private func setup() {
-//        self.backgroundColor = UIColor.clear
-//    }
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -49,8 +35,8 @@ class MHRefreshBase: UIView {
         
 //        self.removeObservers()
         
-//        self.frame.size.width = (newSuperview?.frame.size.width)!
-//        self.frame.origin.x = 0.0
+        self.frame.size.width = (newSuperview?.frame.size.width)!
+        self.frame.origin.x = 0.0
         
         self.addObservers()
 

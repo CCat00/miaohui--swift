@@ -17,15 +17,15 @@ class MHHomeTableViewController: UITableViewController {
         
         self.setupUI()
         
-        self.tableView.addRefreshHeader {
-            print("***(*(*(*(*(((*(*(")
-            
+        self.tableView.addRefreshHeader { 
+            header in
             let deadlineTime = DispatchTime.now() + .seconds(3)
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                 print("test")
-                
+                header.endRefreshing()
             }
         }
+        
         
         MHHomeParser().requestNewData { (homeDataModel) in
             
