@@ -30,8 +30,6 @@ class MHHomePromotionsItem: UIView {
         didSet {
             if pro == nil { return }
             
-            if oldValue != nil { return } //滚动tableview的情况 // TODO:这里可能会出现，下拉刷新的时候，不应return，先这样写吧！！
-            
             name.text = pro!.ad_name
             
             imageView.kf.setImage(with: URL.init(string: pro!.ad_code!))

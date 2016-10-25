@@ -10,37 +10,23 @@ import UIKit
 
 class MHHomeTableViewController: UITableViewController {
     
+    /// 标示首页倒计时是否需要重新赋值。（只有在下拉刷新的时候，才重新赋值）
+    static var isNeedReloadCountDown: Bool = false
+    
     var homeData: MHHomeDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupUI()
-        
-        
-        self.tableView.addRefreshHeader(header: MHRefreshNormalHeader.headerWithHandler(handler: { (header) in
-            let deadlineTime = DispatchTime.now() + .seconds(3)
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-                print("endRefreshing")
-                header.endRefreshing()
-            }
-        }))
-        
-        
-        
-        MHHomeParser().requestNewData { (homeDataModel) in
-            
-            self.homeData = homeDataModel
-            self.tableView.reloadData()
-        }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.setupRefresh()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.refresh_header()?.beginRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,6 +66,29 @@ class MHHomeTableViewController: UITableViewController {
         self.tableView.register(UINib.init(nibName: "MHHomeNavigatorTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeNavigatorTableViewCell")
          self.tableView.register(UINib.init(nibName: "MHHomeViewfieldTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomeViewfieldTableViewCell")
         self.tableView.register(UINib.init(nibName: "MHHomePromotionsTableViewCell", bundle: nil), forCellReuseIdentifier: "MHHomePromotionsTableViewCell")
+    }
+    
+    /// 上拉 & 下拉 刷新
+    private func setupRefresh() {
+        
+        /// 下拉刷新
+        self.tableView.addRefreshHeader(header: MHRefreshNormalHeader.headerWithHandler(handler: { (header) in
+            
+            MHHomeParser().requestNewData { (homeDataModel) in
+                
+                self.homeData = homeDataModel
+                MHHomeTableViewController.isNeedReloadCountDown = true
+                self.tableView.reloadData()
+                header.endRefreshing()
+            }
+
+//            let deadlineTime = DispatchTime.now() + .seconds(3)
+//            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+//                //print("endRefreshing")
+//                
+//            }
+        }))
+
     }
 
     // MARK: - Table view data source

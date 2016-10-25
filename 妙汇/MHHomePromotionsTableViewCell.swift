@@ -18,6 +18,11 @@ class MHHomePromotionsTableViewCell: UITableViewCell {
     var pros: [MHPromotion]? {
         didSet {
             if pros != nil {
+                
+                /// 滚动tableView的时候，不重新赋值。只有在下拉刷新的时候，才继续赋值。
+                if !MHHomeTableViewController.isNeedReloadCountDown { return }
+                MHHomeTableViewController.isNeedReloadCountDown = false
+                
                 leftItem.pro = pros![0]
                 centerItem.pro = pros![1]
                 rightItem.pro = pros![2]

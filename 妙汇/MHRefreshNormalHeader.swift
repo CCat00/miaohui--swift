@@ -22,19 +22,19 @@ class MHRefreshNormalHeader: MHRefreshHeader {
     
     // MARK: - Life cycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.setup()
-    }
-    
-    private func setup() {
-        
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        self.setup()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        self.setup()
+//    }
+//    
+//    private func setup() {
+//        
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

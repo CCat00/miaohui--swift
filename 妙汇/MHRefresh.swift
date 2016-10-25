@@ -27,4 +27,8 @@ extension UIScrollView {
         let header = objc_getAssociatedObject(self, &REFRESH_HEADER_KEY) as? MHRefreshNormalHeader
         return header
     }
+    
+    // MARK: - Footer
+    
+    
 }
