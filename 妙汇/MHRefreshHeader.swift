@@ -10,14 +10,18 @@ import UIKit
 
 typealias MHRefreshHeaderBlock = (MHRefreshHeader) -> Void
 
+/// 下拉控件的基类
 class MHRefreshHeader: MHRefreshBase {
     
+    /// 下拉刷新回调
     var refreshHeaderBlock: MHRefreshHeaderBlock?
     
+    /// 偏移header的高度
     private var insetTDelta: CGFloat?
     
     // MARK: - Override
     
+    /// 开始刷新
     override func beginRefreshing() {
         super.beginRefreshing()
         self.changeRefreshState(state: .refreshing)
@@ -33,7 +37,7 @@ class MHRefreshHeader: MHRefreshBase {
         super.changeRefreshState(state: state)
         
         if state == .normal {
-         
+            
             //从刷新状态恢复到初始状态
             UIView.animate(
                 withDuration: MHRefreshAnimationDuration,
@@ -54,8 +58,8 @@ class MHRefreshHeader: MHRefreshBase {
                     self.scrollView!.setContentOffset(CGPoint.init(x: 0, y: -top), animated: false)
                 },
                 completion: { (completed) in
-                    //TODO:处理回调
-                    self.refreshHeaderBlock?(self as! MHRefreshNormalHeader)
+                    // 处理回调
+                    self.refreshHeaderBlock?(self)
             })
             
         }
