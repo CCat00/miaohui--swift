@@ -19,6 +19,10 @@ class MHRefreshHeader: MHRefreshBase {
     /// 偏移header的高度
     private var insetTDelta: CGFloat?
     
+    class func headerWithHandler(handler: MHRefreshHeaderBlock?) -> MHRefreshHeader? {
+        return nil
+    }
+    
     // MARK: - Override
     
     /// 开始刷新

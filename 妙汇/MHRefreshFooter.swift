@@ -8,6 +8,16 @@
 
 import UIKit
 
-class MHRefreshFooter: MHRefreshBase {
+typealias MHRefreshFooterBlock = (MHRefreshFooter) -> Void
 
+/// 上拉加载控件的基类
+class MHRefreshFooter: MHRefreshBase {
+    
+    /// 上拉加载回调
+    var refreshFooterBlock: MHRefreshFooterBlock?
+    
+    static func footerWithHandler(handler: MHRefreshFooterBlock?) -> MHRefreshFooter? {
+        return nil
+    }
+    
 }

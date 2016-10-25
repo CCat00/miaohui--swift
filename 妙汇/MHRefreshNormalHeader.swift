@@ -13,7 +13,7 @@ class MHRefreshNormalHeader: MHRefreshHeader {
     @IBOutlet weak var refresh_arrow: UIImageView!
     @IBOutlet weak var refresh_indicator: UIActivityIndicatorView!
     
-    static func headerWithHandler(handler: MHRefreshHeaderBlock?) -> MHRefreshNormalHeader{
+     override class func headerWithHandler(handler: MHRefreshHeaderBlock?) -> MHRefreshNormalHeader {
         let views = Bundle.main.loadNibNamed("MHRefreshNormalHeader", owner: nil, options: nil)
         let header = views!.last as! MHRefreshNormalHeader
         header.refreshHeaderBlock = handler

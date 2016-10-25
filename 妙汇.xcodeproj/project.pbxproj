@@ -123,12 +123,12 @@
 		68120CA81DB9BA0C000CA19D /* PullRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				68120CAF1DB9C053000CA19D /* MHRefresh.swift */,
+				68120CAD1DB9BC32000CA19D /* MHRefreshCommon.swift */,
 				68120CB11DB9E75C000CA19D /* MHRefreshBase.swift */,
 				68120CA91DB9BA37000CA19D /* MHRefreshHeader.swift */,
 				6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */,
 				68120CAB1DB9BA45000CA19D /* MHRefreshNormalHeader.xib */,
-				68120CAD1DB9BC32000CA19D /* MHRefreshCommon.swift */,
-				68120CAF1DB9C053000CA19D /* MHRefresh.swift */,
 				682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */,
 			);
 			name = PullRefresh;
