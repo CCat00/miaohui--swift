@@ -52,6 +52,10 @@ class MHTabBarController: UITabBarController {
             
         }
 
+        self.tabBar.isTranslucent = false
+//        self.tabBar.backgroundImage = nil
+//        self.tabBar.backgroundColor = UIColor.red.withAlphaComponent(0.3)
+//        self.tabBar.barTintColor = UIColor.clear
         self.tabBar.tintColor = MH_MAIN_COLOR_YELLOW
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset.init(horizontal: 0, vertical: -4)
         UITabBarItem.appearance().setTitleTextAttributes(

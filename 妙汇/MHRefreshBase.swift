@@ -18,6 +18,23 @@ class MHRefreshBase: UIView {
     var scrollViewEdgeInsets: UIEdgeInsets?
 
     // MARK: - Life cycle
+    
+    // MARK: - Life cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    func setup() {
+        
+    }
+
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -42,18 +59,21 @@ class MHRefreshBase: UIView {
     
     private func addObservers() {
         scrollView!.addObserver(self, forKeyPath: MHRefreshKeyPathContentOffset, options: [.new, .old], context: &MHRefreshKeyPathContentOffsetContext)
+        scrollView!.addObserver(self, forKeyPath: MHRefreshKeyPathContentSize, options: [.new, .old], context: &MHRefreshKeyPathContentSizeContext)
         
     }
     
     private func removeObservers() {
         
         scrollView!.removeObserver(self, forKeyPath: MHRefreshKeyPathContentOffset, context: &MHRefreshKeyPathContentOffsetContext)
+        scrollView!.removeObserver(self, forKeyPath: MHRefreshKeyPathContentSize, context: &MHRefreshKeyPathContentSizeContext)
     }
     
     // MARK: - Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.placesSubviews()
     }
     
     // MARK: - KVO
@@ -66,15 +86,18 @@ class MHRefreshBase: UIView {
         
         if keyPath == MHRefreshKeyPathContentOffset {
             self.scrollViewContentOffsetDidChange(change: change)
+        } else if keyPath == MHRefreshKeyPathContentSize {
+            self.scrollViewContentSizeDidChange(change: change)
         }
         
     }
     
     // MARK: -
     
-    func scrollViewContentOffsetDidChange(change: [NSKeyValueChangeKey : Any]?) {
-        
-    }
+    func placesSubviews() { }
+    
+    func scrollViewContentOffsetDidChange(change: [NSKeyValueChangeKey : Any]?) { }
+    func scrollViewContentSizeDidChange(change: [NSKeyValueChangeKey : Any]?) { }
     
     func changeRefreshState(state: MHRefreshState) {
         refreshState = state
@@ -84,7 +107,13 @@ class MHRefreshBase: UIView {
         UIView.animate(withDuration: MHRefreshAnimationDuration) { 
             self.alpha = 1.0
         }
+        self.changeRefreshState(state: .refreshing)
     }
+    
+    func endRefreshing() {
+        self.changeRefreshState(state: .normal)
+    }
+
     
 }
 

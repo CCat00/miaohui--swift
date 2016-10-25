@@ -17,7 +17,7 @@ class MHHomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.setupUI()
         self.setupRefresh()
     }
@@ -74,6 +74,8 @@ class MHHomeTableViewController: UITableViewController {
         /// 下拉刷新
         self.tableView.addRefreshHeader(header: MHRefreshNormalHeader.headerWithHandler(handler: { (header) in
             
+//            self.tableView.refresh_footer()?.resetNoMoreData()
+            
             MHHomeParser().requestNewData { (homeDataModel) in
                 
                 self.homeData = homeDataModel
@@ -81,12 +83,14 @@ class MHHomeTableViewController: UITableViewController {
                 self.tableView.reloadData()
                 header.endRefreshing()
             }
-
-//            let deadlineTime = DispatchTime.now() + .seconds(3)
-//            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-//                //print("endRefreshing")
-//                
-//            }
+        }))
+        
+        self.tableView.addRefreshFooter(footer: MHRefreshNormalFooter.footerWithHandler(handler: { (footer) in
+            let time = DispatchTime.now() + DispatchTimeInterval.seconds(5)
+            DispatchQueue.main.asyncAfter(deadline: time, execute: { 
+//                footer.endRefreshingWithNoMoreData()
+                footer.endRefreshing()
+            })
         }))
 
     }

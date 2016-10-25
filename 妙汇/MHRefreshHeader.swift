@@ -28,7 +28,6 @@ class MHRefreshHeader: MHRefreshBase {
     /// 开始刷新
     override func beginRefreshing() {
         super.beginRefreshing()
-        self.changeRefreshState(state: .refreshing)
     }
     
     override func changeRefreshState(state: MHRefreshState) {
@@ -116,10 +115,7 @@ class MHRefreshHeader: MHRefreshBase {
     
     // MARK: - Public
     
-    func endRefreshing() {
-        self.changeRefreshState(state: .normal)
     }
-}
 
 
 

@@ -27,6 +27,8 @@
 		6817E0341DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */; };
 		6817E0441DBA1E2800B9B6E7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 6817E0431DBA1E2800B9B6E7 /* home.json */; };
 		682D302C1DBF29380017CFDC /* MHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */; };
+		682D302E1DBF438B0017CFDC /* MHRefreshNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682D302D1DBF438B0017CFDC /* MHRefreshNormalFooter.swift */; };
+		682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */; };
 		6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4911DB4D87F00CA881F /* AppDelegate.swift */; };
 		6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4951DB4D87F00CA881F /* Main.storyboard */; };
 		6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4981DB4D87F00CA881F /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		6817E0431DBA1E2800B9B6E7 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 		682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshFooter.swift; sourceTree = "<group>"; };
+		682D302D1DBF438B0017CFDC /* MHRefreshNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshNormalFooter.swift; sourceTree = "<group>"; };
+		682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHRefreshNormalFooter.xib; sourceTree = "<group>"; };
 		6843C48E1DB4D87F00CA881F /* 妙汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "妙汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6843C4911DB4D87F00CA881F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6843C4961DB4D87F00CA881F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				6817E0331DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift */,
 				68120CAB1DB9BA45000CA19D /* MHRefreshNormalHeader.xib */,
 				682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */,
+				682D302D1DBF438B0017CFDC /* MHRefreshNormalFooter.swift */,
+				682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */,
 			);
 			name = PullRefresh;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				6817E0441DBA1E2800B9B6E7 /* home.json in Resources */,
 				68120C841DB8684F000CA19D /* MHHomeViewfieldItem.xib in Resources */,
 				68120C741DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib in Resources */,
+				682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */,
 				68120C681DB71C9D000CA19D /* MHHomeADTableViewCell.xib in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
 				68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */,
@@ -453,6 +460,7 @@
 				68120C731DB764BA000CA19D /* MHHomePromotionsTableViewCell.swift in Sources */,
 				68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */,
 				68120CAE1DB9BC32000CA19D /* MHRefreshCommon.swift in Sources */,
+				682D302E1DBF438B0017CFDC /* MHRefreshNormalFooter.swift in Sources */,
 				68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */,
 				68120CAA1DB9BA37000CA19D /* MHRefreshHeader.swift in Sources */,
 				68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */,

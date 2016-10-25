@@ -14,6 +14,8 @@ let MHRefreshHeaderY = -40.0
 let MHRefreshHeaderW = SCREEN_WIDTH
 let MHRefreshHeaderH = 40.0
 
+let MHRefreshFooterH = 40.0
+
 
 enum MHRefreshState {
     case normal
@@ -26,6 +28,9 @@ enum MHRefreshState {
 
 let MHRefreshKeyPathContentOffset = "contentOffset"
 var MHRefreshKeyPathContentOffsetContext = 0
+
+let MHRefreshKeyPathContentSize = "contentSize"
+var MHRefreshKeyPathContentSizeContext = 0
 
 
 let MHRefreshAnimationDuration = 0.3
