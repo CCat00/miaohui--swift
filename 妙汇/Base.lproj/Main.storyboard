@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5p3-xA-xcz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5p3-xA-xcz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,8 +43,12 @@
                                                 <constraint firstAttribute="height" constant="0.5" id="IZe-6C-jMT"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-Gc-7gd">
-                                            <state key="normal" image="wodeshoucang"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-Gc-7gd" customClass="MHAnimationHeartBtn" customModule="妙汇" customModuleProvider="target">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="9XK-gE-ao8"/>
+                                                <constraint firstAttribute="height" constant="15" id="LO6-ae-83P"/>
+                                            </constraints>
+                                            <state key="normal" image="leftmenu_favor"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -316,6 +320,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="leftmenu_favor" width="38" height="38"/>
         <image name="tab_Category" width="20" height="20"/>
         <image name="tab_Category_wt" width="20" height="20"/>
         <image name="tab_cart" width="19" height="19"/>
@@ -326,6 +331,5 @@
         <image name="tab_home_wt" width="19" height="19"/>
         <image name="tab_personal" width="19" height="19"/>
         <image name="tab_personal_wt" width="19" height="19"/>
-        <image name="wodeshoucang" width="34" height="34"/>
     </resources>
 </document>

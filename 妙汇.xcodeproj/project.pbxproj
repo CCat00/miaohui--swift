@@ -29,6 +29,7 @@
 		682D302C1DBF29380017CFDC /* MHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */; };
 		682D302E1DBF438B0017CFDC /* MHRefreshNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682D302D1DBF438B0017CFDC /* MHRefreshNormalFooter.swift */; };
 		682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */; };
+		682D30331DBF68040017CFDC /* MHAnimationHeartBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682D30321DBF68040017CFDC /* MHAnimationHeartBtn.swift */; };
 		6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4911DB4D87F00CA881F /* AppDelegate.swift */; };
 		6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4951DB4D87F00CA881F /* Main.storyboard */; };
 		6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6843C4981DB4D87F00CA881F /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		682D302B1DBF29380017CFDC /* MHRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshFooter.swift; sourceTree = "<group>"; };
 		682D302D1DBF438B0017CFDC /* MHRefreshNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHRefreshNormalFooter.swift; sourceTree = "<group>"; };
 		682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHRefreshNormalFooter.xib; sourceTree = "<group>"; };
+		682D30321DBF68040017CFDC /* MHAnimationHeartBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHAnimationHeartBtn.swift; sourceTree = "<group>"; };
 		6843C48E1DB4D87F00CA881F /* 妙汇.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "妙汇.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6843C4911DB4D87F00CA881F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6843C4961DB4D87F00CA881F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 				682D302F1DBF439C0017CFDC /* MHRefreshNormalFooter.xib */,
 			);
 			name = PullRefresh;
+			sourceTree = "<group>";
+		};
+		682D30311DBF67A50017CFDC /* HeartAnimationBtn */ = {
+			isa = PBXGroup;
+			children = (
+				682D30321DBF68040017CFDC /* MHAnimationHeartBtn.swift */,
+			);
+			name = HeartAnimationBtn;
 			sourceTree = "<group>";
 		};
 		6843C4851DB4D87F00CA881F = {
@@ -215,6 +225,7 @@
 		6843C4A71DB5B49500CA881F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				682D30311DBF67A50017CFDC /* HeartAnimationBtn */,
 				68120CA81DB9BA0C000CA19D /* PullRefresh */,
 				68120C621DB706F8000CA19D /* ADScrollView */,
 			);
@@ -250,19 +261,19 @@
 			isa = PBXGroup;
 			children = (
 				6843C4B21DB5B83A00CA881F /* MHGoodsTableViewCell.swift */,
-				68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */,
-				68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */,
-				68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */,
-				68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */,
 				68120C651DB71C9D000CA19D /* MHHomeADTableViewCell.swift */,
-				68120C661DB71C9D000CA19D /* MHHomeADTableViewCell.xib */,
-				68120C711DB764BA000CA19D /* MHHomePromotionsTableViewCell.swift */,
-				68120C721DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib */,
+				68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */,
 				68120C751DB76B87000CA19D /* MHHomePromotionsItem.swift */,
-				68120C7B1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.swift */,
-				68120C7C1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.xib */,
+				68120C711DB764BA000CA19D /* MHHomePromotionsTableViewCell.swift */,
 				68120C811DB86845000CA19D /* MHHomeViewfieldItem.swift */,
+				68120C7B1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.swift */,
+				68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */,
+				68120C661DB71C9D000CA19D /* MHHomeADTableViewCell.xib */,
+				68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */,
+				68120C721DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib */,
 				68120C831DB8684F000CA19D /* MHHomeViewfieldItem.xib */,
+				68120C7C1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.xib */,
+				68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -464,6 +475,7 @@
 				68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */,
 				68120CAA1DB9BA37000CA19D /* MHRefreshHeader.swift in Sources */,
 				68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */,
+				682D30331DBF68040017CFDC /* MHAnimationHeartBtn.swift in Sources */,
 				68120C821DB86845000CA19D /* MHHomeViewfieldItem.swift in Sources */,
 				6843C4AE1DB5B66900CA881F /* MHBaseNavController.swift in Sources */,
 				6817E0341DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift in Sources */,

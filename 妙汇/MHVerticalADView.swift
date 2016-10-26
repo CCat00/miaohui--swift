@@ -41,14 +41,6 @@ class MHVerticalADView: UIView, UIScrollViewDelegate {
     private var contentView2 = UIView.init()
     private var timer: Timer?
     
-    private var selfW: CGFloat {
-            return self.bounds.size.width
-    }
-    private var selfH: CGFloat {
-        return self.bounds.size.height
-    }
-
-    
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
