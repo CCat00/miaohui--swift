@@ -98,4 +98,23 @@ extension UIView {
     }
 }
 
+// MARK: - UIImage
+
+extension UIImage {
+    static func imageWithColor(color: UIColor) -> UIImage? {
+        return self.imageWithColor(color: color, size: CGSize.init(width: 1, height: 1))
+    }
+        
+    static func imageWithColor(color: UIColor, size: CGSize) -> UIImage? {
+        if size.width <= 0 || size.height <= 0 { return nil }
+        let rect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
 

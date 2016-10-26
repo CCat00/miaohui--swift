@@ -20,11 +20,11 @@ class MHHomeTableViewController: UITableViewController {
 
         self.setupUI()
         self.setupRefresh()
+        self.tableView.refresh_header()?.beginRefreshing()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.refresh_header()?.beginRefreshing()
     }
     
     override func didReceiveMemoryWarning() {

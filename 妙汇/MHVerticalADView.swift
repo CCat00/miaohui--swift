@@ -111,6 +111,18 @@ class MHVerticalADView: UIView, UIScrollViewDelegate {
 }
 
 extension UIView {
+    // 1-> 3,4   2-> 5,6
+    func allSubviews() -> [UIView] {
+        var res = self.subviews //1,2   3,4
+        for subview in self.subviews {
+            // subview = 1
+            let riz = subview.allSubviews()
+            // riz = 3,4
+            res.append(contentsOf: riz)
+        }
+        return res
+    }
+    
     func removeAllSubviews() {
         for subview in self.subviews {
             subview.removeFromSuperview()

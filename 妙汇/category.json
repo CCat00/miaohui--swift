@@ -1,0 +1,73 @@
+{
+    "resultCode": 1,
+    "resultMsg": "成功",
+    "tipsMsg": "",
+    "navigation": [
+                   {
+                   "name": "新品",
+                   "url": "mwgoodstag://new",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464762738571683270.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674096960910726.png"
+                   },
+                   {
+                   "name": "热卖",
+                   "url": "mwgoodstag://hot",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464762975951452271.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674109107929859.png"
+                   },
+                   {
+                   "name": "经济之选",
+                   "url": "mwgoodscat://12",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763056494492117.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674118488486338.png"
+                   },
+                   {
+                   "name": "新奇数码",
+                   "url": "mwgoodscat://1",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763087662019233.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674128714626728.png"
+                   },
+                   {
+                   "name": "生活改良",
+                   "url": "mwgoodscat://7",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763153081988641.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674139779048896.png"
+                   },
+                   {
+                   "name": "运动户外",
+                   "url": "mwgoodscat://6",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763180412369954.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674149759783687.png"
+                   },
+                   {
+                   "name": "妙女败物",
+                   "url": "mwgoodscat://5",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763204130424380.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674161595758006.png"
+                   },
+                   {
+                   "name": "创意礼品",
+                   "url": "mwgoodscat://8",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763261587974624.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674178755147538.png"
+                   },
+                   {
+                   "name": "3D展示",
+                   "url": "mw3dlist://20",
+                   "icon": "http://image.app.magicwe.com/images/201608/1471587937587407157.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674187842567614.png"
+                   },
+                   {
+                   "name": "全景展示",
+                   "url": "mw360list://13",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763419061658182.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674198371194517.png"
+                   },
+                   {
+                   "name": "所有商品",
+                   "url": "mwgoodscat://0",
+                   "icon": "http://image.app.magicwe.com/images/201606/1464763326787848129.png",
+                   "image": "http://image.app.magicwe.com/images/201609/1473674208254597427.png"
+                   }
+                   ]
+}

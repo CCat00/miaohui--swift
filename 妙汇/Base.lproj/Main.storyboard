@@ -83,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfu-YO-x4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443" y="-905"/>
+            <point key="canvasLocation" x="611" y="-905"/>
         </scene>
         <!--首页-->
         <scene sceneID="obu-v9-36H">
@@ -103,35 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqb-P6-yWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-341" y="-905"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="1z4-9r-M8b">
-            <objects>
-                <tableViewController id="pTB-u8-5sB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jbk-X6-lla">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VQK-jz-YWs">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VQK-jz-YWs" id="rb7-c1-8IT">
-                                    <frame key="frameInset" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pTB-u8-5sB" id="A8n-6C-0Is"/>
-                            <outlet property="delegate" destination="pTB-u8-5sB" id="hOS-NE-cWa"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="BJb-y8-TY0"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bpu-V5-79g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="612" y="-206"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="VlO-zk-fm3">
@@ -289,12 +260,152 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pTB-u8-5sB" kind="relationship" relationship="rootViewController" id="4yR-6S-y4p"/>
+                        <segue destination="gwY-kv-p78" kind="relationship" relationship="rootViewController" id="Sch-jM-iLa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxc-ZH-TbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-340" y="-206"/>
+        </scene>
+        <!--分类-->
+        <scene sceneID="paT-Vn-Hlq">
+            <objects>
+                <viewController id="gwY-kv-p78" customClass="MHCategoryViewController" customModule="妙汇" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p89-ZB-efF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ICG-PP-20f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cfJ-hJ-h7x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="LMS-Ez-WYY">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z7N-yA-wjd">
+                                        <subviews>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMt-kz-dpi" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="oB7-jX-kKQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBL-jT-C4n" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="nIQ-Zf-XtP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="kBL-jT-C4n" firstAttribute="width" secondItem="JMt-kz-dpi" secondAttribute="width" id="5Ah-XU-wVu"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-LO-G2i">
+                                        <subviews>
+                                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ug-xy-XOd" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="dZz-TX-nYn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtB-aZ-AJr" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="KNS-Bo-hqr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="FtB-aZ-AJr" firstAttribute="width" secondItem="7ug-xy-XOd" secondAttribute="width" id="rSs-9X-x9e"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="AAd-Oc-zhc">
+                                        <subviews>
+                                            <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-LV-dHA" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="PsL-1p-XQU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-SH-bAw" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="xbC-a7-qwN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lAS-SH-bAw" firstAttribute="width" secondItem="Bmc-LV-dHA" secondAttribute="width" id="Hfb-iQ-BiX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0FS-UM-Qc0">
+                                        <subviews>
+                                            <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4m-24-JBi" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="I5H-12-aDf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc3-SD-P29" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="4pT-Ym-1Mx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rc3-SD-P29" firstAttribute="width" secondItem="W4m-24-JBi" secondAttribute="width" id="RX0-hz-yVK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4JL-Yw-N07">
+                                        <subviews>
+                                            <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnY-Df-Iee" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="Ys8-Up-AfO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTB-u6-JJh" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="CyS-tN-VTg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="kTB-u6-JJh" firstAttribute="width" secondItem="LnY-Df-Iee" secondAttribute="width" id="jVI-oJ-Tib"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eQf-Tp-nNu">
+                                        <subviews>
+                                            <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pce-S2-p0b" customClass="MHCategoryBtn" customModule="妙汇" customModuleProvider="target">
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="itemAction:" destination="gwY-kv-p78" eventType="touchUpInside" id="SQy-U8-LcZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AAd-Oc-zhc" firstAttribute="height" secondItem="Z7N-yA-wjd" secondAttribute="height" id="AJe-a2-0Cc"/>
+                                    <constraint firstItem="4JL-Yw-N07" firstAttribute="height" secondItem="Z7N-yA-wjd" secondAttribute="height" id="J2m-bp-lzY"/>
+                                    <constraint firstItem="0FS-UM-Qc0" firstAttribute="height" secondItem="Z7N-yA-wjd" secondAttribute="height" id="VJ7-St-vIj"/>
+                                    <constraint firstItem="zrF-LO-G2i" firstAttribute="height" secondItem="Z7N-yA-wjd" secondAttribute="height" id="jSR-Ta-Ln5"/>
+                                    <constraint firstItem="eQf-Tp-nNu" firstAttribute="height" secondItem="Z7N-yA-wjd" secondAttribute="height" id="zyG-da-XoE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ICG-PP-20f" firstAttribute="top" secondItem="LMS-Ez-WYY" secondAttribute="bottom" constant="-1" id="ZM1-wU-LxQ"/>
+                            <constraint firstItem="LMS-Ez-WYY" firstAttribute="leading" secondItem="cfJ-hJ-h7x" secondAttribute="leading" id="k6T-T1-ZA3"/>
+                            <constraint firstAttribute="trailing" secondItem="LMS-Ez-WYY" secondAttribute="trailing" id="kuS-tS-LwV"/>
+                            <constraint firstItem="LMS-Ez-WYY" firstAttribute="top" secondItem="p89-ZB-efF" secondAttribute="bottom" constant="-1" id="wp6-UR-4Vc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="分类" id="7W6-1L-XyI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSW-aR-LQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607.5" y="-206.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Yr6-9B-kep">
