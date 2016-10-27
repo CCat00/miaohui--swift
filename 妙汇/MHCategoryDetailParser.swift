@@ -34,42 +34,59 @@ class MHCategoryDetailParser: NSObject {
     private var tag = "new"
     
     /// 下拉刷新
-    func requestNewData(type: String, handler: @escaping ([MHGoods]?) -> Void) -> () {
+    func requestNewData(type: String, handler: @escaping (MHCategoryList?) -> Void) -> () {
         page = 1
         self.requestDetailDataWithType(type: type, handler: handler)
     }
     
     
     /// 上拉加载更多
-    func requestMoreData(type: String, handler: @escaping ([MHGoods]?) -> Void) -> () {
+    func requestMoreData(type: String, handler: @escaping (MHCategoryList?) -> Void) -> () {
         page += 1
         self.requestDetailDataWithType(type: type, handler: handler)
     }
     
     /// 请求分类页面的详情数据
-    func requestDetailDataWithType(type: String, handler: @escaping ([MHGoods]?) -> Void) {
+    private func requestDetailDataWithType(type: String, handler: @escaping (MHCategoryList?) -> Void) {
         
         self.tag = type
         
-//        if USE_NETWORK {
-//            MHNetwork.POST("http://api.magicwe.com/Goods/getRecommendTipsGoodsList", para: para, headers: headers) { (dic) in
-//                if (dic != nil) {
-//                    let navigation = dic!["navigation"]?.arrayObject
-//                    
-//                    var resArray: [MHNavigator] = []
-//                    
-//                    for nav in navigation! {
-//                        let objDic = NSDictionary.init(dictionary: nav as! [AnyHashable : Any], copyItems:
-//                            false)
-//                        let model = JSONDeserializer<MHNavigator>.deserializeFrom(dict: objDic)
-//                        resArray.append(model!)
-//                    }
-//                    handler(resArray)
-//                } else {
-//                    handler(nil)
-//                }
-//            }
-//        }
+        if USE_NETWORK {
+            
+            MHNetwork.POST("http://api.magicwe.com/Goods/getRecommendTipsGoodsList", para: para, headers: headers) { (jsonString) in
+                if (jsonString != nil) {
+                    
+                    let model = JSONDeserializer<MHCategoryDetail>.deserializeFrom(json: jsonString)
+                    handler(model?.list)
+                } else {
+                    handler(nil)
+                }
+            }
+            
+        } else {
+            
+            let jsonStringFileName = "category_" + type
+            
+            let jsonPath = Bundle.main.path(forResource: jsonStringFileName, ofType: ".json")
+            if jsonPath == nil {
+                handler(nil)
+                return
+            }
+            let jsonURL = URL.init(fileURLWithPath: jsonPath!)
+            
+            do {
+                let jsonData = try Data.init(contentsOf: jsonURL)
+                
+                let jsonString = String.init(data: jsonData, encoding: String.Encoding.utf8)
+                
+                let model = JSONDeserializer<MHCategoryDetail>.deserializeFrom(json: jsonString)
+                handler(model?.list)
+                
+            } catch {
+                handler(nil)
+            }
+
+        }
 
     }
 }

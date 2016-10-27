@@ -17,13 +17,13 @@ import HandyJSON
  },
  */
 /// 首页轮播图
-struct MHBanner: HandyJSON{
+class MHBanner: HandyJSON{
     var type: String?
     var url: String?
     var pic: String?
     var protocol_s: String?
     
-    mutating func mapping(mapper: HelpingMapper) {
+    func mapping(mapper: HelpingMapper) {
         // 指定 protocol_s 字段用 "protocol" 去解析
         mapper.specify(property: &protocol_s, name: "protocol")
         
@@ -33,6 +33,8 @@ struct MHBanner: HandyJSON{
 //            return (parentNames[0], parentNames[1])
 //        }
     }
+    
+    required init() {}
 }
 
 /*
@@ -44,11 +46,13 @@ struct MHBanner: HandyJSON{
  },
  */
 /// 首页第二栏内容
-struct MHNavigator: HandyJSON {
+class MHNavigator: HandyJSON {
     var name: String?
     var url: String?
     var icon: String?
     var image: String?
+    
+    required init() {}
 }
 
 /*
@@ -67,7 +71,7 @@ struct MHNavigator: HandyJSON {
 },
 */
 ///首页 ‘视野’ 栏目
-struct MHArticle: HandyJSON {
+class MHArticle: HandyJSON {
     var article_id: String?
     var cat_id: String?
     var title: String?
@@ -79,6 +83,8 @@ struct MHArticle: HandyJSON {
     var comment_count: String?
     var view_count: String?
     var link_url: String?
+    
+    required init() {}
 }
 
 /*
@@ -98,7 +104,7 @@ struct MHArticle: HandyJSON {
 }
  */
 /// 首页第四栏广告栏
-struct MHPromotion: HandyJSON {
+class MHPromotion: HandyJSON {
     var ad_name: String?
     var ad_title: String?
     var ad_link: String?
@@ -111,10 +117,12 @@ struct MHPromotion: HandyJSON {
     var promote_price: String?
     var promote_start_date: String?
     var promote_end_date: String?
+    
+    required init() {}
 }
 
 /// 商品列表
-struct MHGoods: HandyJSON{
+class MHGoods: HandyJSON{
     var goods_id: String?
     var cat_id: String?
     var goods_name: String?
@@ -140,25 +148,49 @@ struct MHGoods: HandyJSON{
     var nav_cat_id: String?
     var miaohui_price: String?
     var attitude: String?
+    
+    required init() {}
 }
 
 
-struct MHHomeDataModel: HandyJSON {
+class MHHomeDataModel: HandyJSON {
     var banner: [MHBanner]?
     var navigator: [MHNavigator]?
     var articles: [MHArticle]?
     var promotions: [MHPromotion]?
     var goods: [MHGoods]?
     
-//    mutating func mapping(mapper: HelpingMapper) {
-    
-        // 指定 parent 字段用这个方法去解析
-//        mapper.specify(property: &banner) { (rawString) -> [MHBanner] in
-//            let parentNames = rawString.characters.split{$0 == "/"}.map(String.init)
-//            return (parentNames[0], parentNames[1])
-//        }
-//    }
+    required init() {}
 }
+
+//{
+//    "resultCode": 1,
+//    "resultMsg": "成功",
+//    "tipsMsg": "",
+//    "list": {
+//        "banner": [
+class MHHomeData: MHResponseModel {
+    var list: MHHomeDataModel?
+    
+    required init() {}
+}
+
+
+//{
+//    "resultCode": 1,
+//    "resultMsg": "成功",
+//    "tipsMsg": "",
+//    "navigation": [
+
+class MHCategory: MHResponseModel {
+    var navigation: [MHNavigator]?
+    
+    required init() {}
+}
+
+
+
+
 
 
 

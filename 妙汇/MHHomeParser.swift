@@ -49,12 +49,23 @@ class MHHomeParser: NSObject {
     private func requestData(_ handler: @escaping (MHHomeDataModel?) -> Void) {
         
         if USE_NETWORK {
-            MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (dic) in
-                if (dic != nil) {
-                    let listDic = dic!["list"]?.dictionaryObject
-                    let objDic = NSDictionary.init(dictionary: listDic!, copyItems: false)
-                    let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: objDic)
-                    handler(list)
+            MHNetwork.POST("http://api.magicwe.com/Recommend/getHomeGoods", para: para, headers: headers) { (jsonString) in
+                if (jsonString != nil) {
+                    
+                    let homeData = JSONDeserializer<MHHomeData>.deserializeFrom(json: jsonString!)
+                    
+                    if (homeData?.isSuccess)! {
+                        handler(homeData?.list)
+                    } else {
+                        handler(nil)
+                    }
+                    
+                    
+                    
+//                    let listDic = dic!["list"]?.dictionaryObject
+//                    let objDic = NSDictionary.init(dictionary: listDic!, copyItems: false)
+//                    let list = JSONDeserializer<MHHomeDataModel>.deserializeFrom(dict: objDic)
+//                    handler(list)
                 } else {
                     handler(nil)
                 }

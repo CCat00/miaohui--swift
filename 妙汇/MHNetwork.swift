@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 
 class MHNetwork: NSObject {
     
@@ -16,7 +16,7 @@ class MHNetwork: NSObject {
         _ url: URLConvertible,
         para: Parameters? = nil,
         headers: HTTPHeaders? = nil,
-        completionHandler: @escaping ([String : JSON]?) -> Void) {
+        completionHandler: @escaping (String?) -> Void) {
         
         var var_headers: HTTPHeaders = self.defaultHeaders()
         
@@ -32,11 +32,13 @@ class MHNetwork: NSObject {
             case true:
                 //print("response success.")
                 
-                if let value = response.result.value {
+                if let data = response.data {
                     
-                    let json = JSON(value)
-                    let dic = json.dictionary
-                    completionHandler(dic)
+                    let jsonString = String.init(data: data, encoding: String.Encoding.utf8)
+                    
+//                    let json = JSON(value)
+//                    let dic = json.dictionary
+                    completionHandler(jsonString)
                 }
                 else {
                     completionHandler(nil)

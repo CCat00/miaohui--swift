@@ -419,7 +419,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ED-5y-13Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ED-5y-13Q">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeGoodsCell" rowHeight="250" id="9WD-i8-c7Q" customClass="MHGoodsTableViewCell" customModule="妙汇" customModuleProvider="target">
@@ -505,6 +505,9 @@
                             <constraint firstItem="2ED-5y-13Q" firstAttribute="top" secondItem="rlW-P2-XYZ" secondAttribute="bottom" id="tZc-H8-GxB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2ED-5y-13Q" id="Skq-pB-gq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99N-Gg-GAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

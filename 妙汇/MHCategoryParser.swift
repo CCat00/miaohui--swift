@@ -23,19 +23,23 @@ class MHCategoryParser: NSObject {
     func requestData(_ handler: @escaping ([MHNavigator]?) -> Void) {
         
         if USE_NETWORK {
-            MHNetwork.POST("http://api.magicwe.com/Navigator/getAppNavigator", para: nil, headers: headers) { (dic) in
-                if (dic != nil) {
-                    let navigation = dic!["navigation"]?.arrayObject
+            MHNetwork.POST("http://api.magicwe.com/Navigator/getAppNavigator", para: nil, headers: headers) { (jsonString) in
+                if (jsonString != nil) {
                     
-                    var resArray: [MHNavigator] = []
+                    let model = JSONDeserializer<MHCategory>.deserializeFrom(json: jsonString)
+                    handler(model?.navigation)
                     
-                    for nav in navigation! {
-                        let objDic = NSDictionary.init(dictionary: nav as! [AnyHashable : Any], copyItems:
-                            false)
-                        let model = JSONDeserializer<MHNavigator>.deserializeFrom(dict: objDic)
-                        resArray.append(model!)
-                    }
-                    handler(resArray)
+//                    let navigation = dic!["navigation"]?.arrayObject
+//                    
+//                    var resArray: [MHNavigator] = []
+//                    
+//                    for nav in navigation! {
+//                        let objDic = NSDictionary.init(dictionary: nav as! [AnyHashable : Any], copyItems:
+//                            false)
+//                        let model = JSONDeserializer<MHNavigator>.deserializeFrom(dict: objDic)
+//                        resArray.append(model!)
+//                    }
+//                    handler(resArray)
                 } else {
                     handler(nil)
                 }
