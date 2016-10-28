@@ -15,5 +15,5 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let MH_MAIN_COLOR_YELLOW = UIColor.hexColor(hex: 0xFDBC37)
 
 
-let USE_NETWORK = false
-//let USE_NETWORK = true
+//let USE_NETWORK = false
+let USE_NETWORK = true
