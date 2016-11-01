@@ -77,11 +77,13 @@ class MHFilterView: UIView {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib.init(nibName: "MHCustomFilterPriceTableViewCell", bundle: nil), forCellReuseIdentifier: "MHCustomFilterPriceTableViewCell")
-        maskBgView.addSubview(tableView)
         
         let tap2 = UITapGestureRecognizer.init(target: self, action: #selector(MHFilterView.tapGes))
+        tap2.delegate = self
         //maskBgView.removeGestureRecognizer(tap2)
         maskBgView.addGestureRecognizer(tap2)
+        
+        maskBgView.addSubview(tableView)
     
     }
     
@@ -124,6 +126,10 @@ class MHFilterView: UIView {
 
             
         } else {
+            
+            if self.priceList == nil {
+                return
+            }
             
             self.maskBgView.alpha = 1
             
@@ -180,6 +186,31 @@ extension MHFilterView: UITableViewDelegate, UITableViewDataSource {
             return cell!
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let priceModel = priceList!.price![indexPath.row]
+        print("点击筛选条件 minPrice = \(priceModel.minPrice), maxPrice = \(priceModel.maxPrice)")
+    }
+}
+
+// MARK: -  UIGestureRecognizerDelegate
+
+extension MHFilterView: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        //print(touch.view)
+
+        if touch.view == nil {
+            return true
+        }
+        
+        if NSStringFromClass(touch.view!.classForCoder) == "UITableViewCellContentView" {
+            return false
+        }
+
+        return true
     }
 }
 
