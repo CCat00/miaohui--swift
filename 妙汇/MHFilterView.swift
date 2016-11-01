@@ -24,29 +24,48 @@ class MHFilterView: UIView {
     }
     
     // MARK: - Life cycle
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        //print("init with frame. self = \(self)")
         self.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        //print("init with coder. self = \(self)")
         self.setup()
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     private func setup() {
+        
+        //print("setup self is \(self), superview is \(superview)")
+        
+        self.backgroundColor = UIColor.hexColor(hex: 0xfafafa)
         
         //标题
         filterTitleLabel = UILabel.init()
         filterTitleLabel.font = UIFont.systemFont(ofSize: 14.0)
         filterTitleLabel.text = "价格筛选"
         self.addSubview(filterTitleLabel)
+        filterTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        let centerY = NSLayoutConstraint.init(item: filterTitleLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let leading = NSLayoutConstraint.init(item: filterTitleLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 15)
+        self.addConstraints([centerY, leading]);
         
-        //点击事件
-        self.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(MHFilterView.tapGes))
-        self.addGestureRecognizer(tap)
+        //箭头
+        indicateArrow = UIImageView.init(image: UIImage.init(named: "downTowardsArrow"))
+        self.addSubview(indicateArrow)
+        indicateArrow.translatesAutoresizingMaskIntoConstraints = false
+        let centerY2 = NSLayoutConstraint.init(item: indicateArrow, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint.init(item: indicateArrow, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -15)
+        self.addConstraints([centerY2, trailing]);
+
         
         //遮罩
         maskBgView = UIView.init()
@@ -60,55 +79,61 @@ class MHFilterView: UIView {
         tableView.register(UINib.init(nibName: "MHCustomFilterPriceTableViewCell", bundle: nil), forCellReuseIdentifier: "MHCustomFilterPriceTableViewCell")
         maskBgView.addSubview(tableView)
         
-        maskBgView.addGestureRecognizer(tap)
+        let tap2 = UITapGestureRecognizer.init(target: self, action: #selector(MHFilterView.tapGes))
+        //maskBgView.removeGestureRecognizer(tap2)
+        maskBgView.addGestureRecognizer(tap2)
+    
     }
     
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        filterTitleLabel.frame = CGRect.init(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-        
         maskBgView.removeFromSuperview()
         superview?.addSubview(maskBgView)
+        
+        //点击事件
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(MHFilterView.tapGes))
+        //FIXME: 在 `setup()` 方法里加tap手势就不起作用
+        self.removeGestureRecognizer(tap)
+        self.addGestureRecognizer(tap)
         
         maskBgView.frame = CGRect.init(x: selfX, y: selfB, width: selfW, height: SCREEN_HEIGHT - selfB)
         
         let tableViewH: CGFloat = 0.0
-//        if priceList != nil {
-//            tableViewH = CGFloat(44.0 * CGFloat(priceList!.price!.count + 1))
-//        }
         tableView.frame = CGRect.init(x: 0, y: 0, width: maskBgView.selfW, height: tableViewH)
     }
     
     @objc fileprivate func tapGes() {
-    
+        
         if isOpen {
-            
+          
             //关闭
             UIView.animate(
                 withDuration: 0.3,
                 animations: {
-                    
-                    self.maskBgView.alpha = 0
                     self.tableView.selfH = 0
-                    
+                    self.indicateArrow.transform = CGAffineTransform.identity
                 },
                 completion: { (_) in
                     
+                    self.maskBgView.alpha = 0
                     self.isOpen = false
+                    self.tableView.endEditing(true)
             })
 
             
         } else {
+            
+            self.maskBgView.alpha = 1
             
             //展开
             UIView.animate(
                 withDuration: 0.3,
                 animations: { 
                     
-                    self.maskBgView.alpha = 1
                     self.tableView.selfH = CGFloat(44.0 * CGFloat(self.priceList!.price!.count + 1))
+                    self.indicateArrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
                     
                 },
                 completion: { (_) in

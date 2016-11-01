@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = UIColor.black
         UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().tintColor = UIColor.white
         
         return true
     }
