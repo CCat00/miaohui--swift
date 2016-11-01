@@ -53,6 +53,13 @@
 		687B57AB1DC6DF8A007B136F /* MHFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57AA1DC6DF8A007B136F /* MHFilterView.swift */; };
 		687B57AE1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57AC1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.swift */; };
 		687B57AF1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687B57AD1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib */; };
+		68B0879F1DC8703C009E3D8C /* MHFieldOfViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B0879E1DC8703C009E3D8C /* MHFieldOfViewViewController.swift */; };
+		68B087A11DC87740009E3D8C /* fieldOfView_category.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B087A01DC87740009E3D8C /* fieldOfView_category.json */; };
+		68B087A51DC8779A009E3D8C /* fieldOfView_all.json in Resources */ = {isa = PBXBuildFile; fileRef = 68B087A41DC8779A009E3D8C /* fieldOfView_all.json */; };
+		68B087A71DC877E1009E3D8C /* MHFieldOfViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B087A61DC877E1009E3D8C /* MHFieldOfViewParser.swift */; };
+		68B087A91DC87915009E3D8C /* MHFieldOfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B087A81DC87915009E3D8C /* MHFieldOfViewModel.swift */; };
+		68B087AC1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B087AB1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift */; };
+		68B087AE1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B087AD1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift */; };
 		68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */; };
 		68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */; };
 		68BD0D5E1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */; };
@@ -114,6 +121,13 @@
 		687B57AA1DC6DF8A007B136F /* MHFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFilterView.swift; sourceTree = "<group>"; };
 		687B57AC1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCustomFilterPriceTableViewCell.swift; sourceTree = "<group>"; };
 		687B57AD1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHCustomFilterPriceTableViewCell.xib; sourceTree = "<group>"; };
+		68B0879E1DC8703C009E3D8C /* MHFieldOfViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewViewController.swift; sourceTree = "<group>"; };
+		68B087A01DC87740009E3D8C /* fieldOfView_category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fieldOfView_category.json; sourceTree = "<group>"; };
+		68B087A41DC8779A009E3D8C /* fieldOfView_all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fieldOfView_all.json; sourceTree = "<group>"; };
+		68B087A61DC877E1009E3D8C /* MHFieldOfViewParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewParser.swift; sourceTree = "<group>"; };
+		68B087A81DC87915009E3D8C /* MHFieldOfViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewModel.swift; sourceTree = "<group>"; };
+		68B087AB1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewListTableViewCell.swift; sourceTree = "<group>"; };
+		68B087AD1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewDetailViewController.swift; sourceTree = "<group>"; };
 		68BD0D581DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeNavigatorTableViewCell.swift; sourceTree = "<group>"; };
 		68BD0D591DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHHomeNavigatorTableViewCell.xib; sourceTree = "<group>"; };
 		68BD0D5C1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHNavItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +242,7 @@
 				6843C4B81DB5BC0700CA881F /* MHHomeModel.swift */,
 				687A3E681DC1A52E004D91B7 /* MHResponseModel.swift */,
 				687A3E6A1DC1CDD1004D91B7 /* MHCategoryDetail.swift */,
+				68B087A81DC87915009E3D8C /* MHFieldOfViewModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 		6843C4A51DB4DFC800CA881F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				68B087AA1DC87B9C009E3D8C /* FieldOfView */,
 				687A3E551DC0A130004D91B7 /* Category */,
 				6843C4B11DB5B78200CA881F /* Home */,
 			);
@@ -244,6 +260,7 @@
 		6843C4A61DB4DFCD00CA881F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				68B0879D1DC86FCC009E3D8C /* FieldOfView */,
 				687A3E541DC09E3F004D91B7 /* Category */,
 				6843C4AC1DB5B64200CA881F /* Home */,
 				6843C4AA1DB5B4F700CA881F /* Base */,
@@ -314,10 +331,13 @@
 				687A3E621DC1A059004D91B7 /* category_hot.json */,
 				687A3E641DC1A0BA004D91B7 /* category_new.json */,
 				687A3E5A1DC0A54C004D91B7 /* category.json */,
+				68B087A41DC8779A009E3D8C /* fieldOfView_all.json */,
+				68B087A01DC87740009E3D8C /* fieldOfView_category.json */,
 				6817E0431DBA1E2800B9B6E7 /* home.json */,
-				687A3E5C1DC0A586004D91B7 /* MHCategoryParser.swift */,
 				687A3E661DC1A18B004D91B7 /* MHCategoryDetailParser.swift */,
+				687A3E5C1DC0A586004D91B7 /* MHCategoryParser.swift */,
 				6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */,
+				68B087A61DC877E1009E3D8C /* MHFieldOfViewParser.swift */,
 			);
 			name = "Data&Protocols";
 			sourceTree = "<group>";
@@ -348,6 +368,23 @@
 				687B57AD1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		68B0879D1DC86FCC009E3D8C /* FieldOfView */ = {
+			isa = PBXGroup;
+			children = (
+				68B0879E1DC8703C009E3D8C /* MHFieldOfViewViewController.swift */,
+				68B087AD1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift */,
+			);
+			name = FieldOfView;
+			sourceTree = "<group>";
+		};
+		68B087AA1DC87B9C009E3D8C /* FieldOfView */ = {
+			isa = PBXGroup;
+			children = (
+				68B087AB1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift */,
+			);
+			name = FieldOfView;
 			sourceTree = "<group>";
 		};
 		68BD0D621DB62F5C000BB94B /* Extension */ = {
@@ -436,6 +473,7 @@
 				687B57AF1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib in Resources */,
 				687A3E651DC1A0BA004D91B7 /* category_new.json in Resources */,
 				6843C49C1DB4D87F00CA881F /* LaunchScreen.storyboard in Resources */,
+				68B087A51DC8779A009E3D8C /* fieldOfView_all.json in Resources */,
 				68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */,
 				68120C7E1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.xib in Resources */,
 				6817E0441DBA1E2800B9B6E7 /* home.json in Resources */,
@@ -443,6 +481,7 @@
 				68120C741DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib in Resources */,
 				682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */,
 				68120C681DB71C9D000CA19D /* MHHomeADTableViewCell.xib in Resources */,
+				68B087A11DC87740009E3D8C /* fieldOfView_category.json in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
 				68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */,
 				6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */,
@@ -516,10 +555,12 @@
 				687B57AB1DC6DF8A007B136F /* MHFilterView.swift in Sources */,
 				687A3E6B1DC1CDD1004D91B7 /* MHCategoryDetail.swift in Sources */,
 				687A3E691DC1A52E004D91B7 /* MHResponseModel.swift in Sources */,
+				68B087A91DC87915009E3D8C /* MHFieldOfViewModel.swift in Sources */,
 				68120C7D1DB85C2A000CA19D /* MHHomeViewfieldTableViewCell.swift in Sources */,
 				6843C4B71DB5BAF900CA881F /* MHHomeParser.swift in Sources */,
 				687A3E5D1DC0A586004D91B7 /* MHCategoryParser.swift in Sources */,
 				687A3E671DC1A18B004D91B7 /* MHCategoryDetailParser.swift in Sources */,
+				68B087AC1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift in Sources */,
 				68120C641DB70715000CA19D /* MHADScrollView.swift in Sources */,
 				682D302C1DBF29380017CFDC /* MHRefreshFooter.swift in Sources */,
 				6843C4BC1DB5BC8500CA881F /* MHNetwork.swift in Sources */,
@@ -528,6 +569,7 @@
 				68120C7A1DB774E4000CA19D /* MHTabBarController.swift in Sources */,
 				68120C731DB764BA000CA19D /* MHHomePromotionsTableViewCell.swift in Sources */,
 				68BD0D5A1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.swift in Sources */,
+				68B087A71DC877E1009E3D8C /* MHFieldOfViewParser.swift in Sources */,
 				68120CAE1DB9BC32000CA19D /* MHRefreshCommon.swift in Sources */,
 				682D302E1DBF438B0017CFDC /* MHRefreshNormalFooter.swift in Sources */,
 				68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */,
@@ -539,6 +581,8 @@
 				6843C4AE1DB5B66900CA881F /* MHBaseNavController.swift in Sources */,
 				6817E0341DBA092D00B9B6E7 /* MHRefreshNormalHeader.swift in Sources */,
 				68BD0D5E1DB623EC000BB94B /* MHNavItemCollectionViewCell.swift in Sources */,
+				68B0879F1DC8703C009E3D8C /* MHFieldOfViewViewController.swift in Sources */,
+				68B087AE1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift in Sources */,
 				687A3E571DC0A142004D91B7 /* MHCategoryBtn.swift in Sources */,
 				68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */,
 				6843C4B01DB5B68900CA881F /* MHHomeTableViewController.swift in Sources */,

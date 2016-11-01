@@ -1,0 +1,91 @@
+{
+    "resultCode": 1,
+    "resultMsg": "成功",
+    "tipsMsg": "",
+    "navigator": [
+                  {
+                  "name": "全部",
+                  "url": "mwarticletag://0",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "涨姿势",
+                  "url": "mwarticletag://1",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "户外",
+                  "url": "mwarticletag://2",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "家居",
+                  "url": "mwarticletag://3",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "时尚",
+                  "url": "mwarticletag://4",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "礼物",
+                  "url": "mwarticletag://5",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "数码",
+                  "url": "mwarticletag://6",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "创意生活",
+                  "url": "mwarticletag://7",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "设计感",
+                  "url": "mwarticletag://8",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "科技范",
+                  "url": "mwarticletag://9",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "母婴",
+                  "url": "mwarticletag://10",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "宠物",
+                  "url": "mwarticletag://11",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "测评",
+                  "url": "mwarticletag://12",
+                  "icon": "",
+                  "image": null
+                  },
+                  {
+                  "name": "欧洲杯",
+                  "url": "mwarticletag://13",
+                  "icon": "",
+                  "image": null
+                  }
+                  ]
+}
