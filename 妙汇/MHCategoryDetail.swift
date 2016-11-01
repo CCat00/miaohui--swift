@@ -18,12 +18,31 @@ import HandyJSON
 
 class MHCategoryList: HandyJSON {
     var goods: [MHGoods]?
+    var filter: MHCategoryPriceList?
+    required init() {}
+}
+
+//"filter": {
+//    "price": [
+//    {
+//    "title": "全部",
+//    "minPrice": "0"
+//    },
+class MHCategoryPriceList: HandyJSON {
+    var price: [MHCategoryPrice]?
+    
+    required init() {}
+}
+
+class MHCategoryPrice: HandyJSON {
+    var title: String?
+    var minPrice: String?
+    var maxPrice: String?
     
     required init() {}
 }
 
 class MHCategoryDetail: MHResponseModel {
     var list: MHCategoryList?
-    
     required init() {}
 }

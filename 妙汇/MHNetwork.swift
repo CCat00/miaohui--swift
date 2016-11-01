@@ -27,7 +27,7 @@ class MHNetwork: NSObject {
         }
         
         Alamofire.request(url, method: .post, parameters: para, encoding: URLEncoding.default, headers: var_headers).responseJSON { (response) in
-            
+
             switch response.result.isSuccess {
             case true:
                 //print("response success.")

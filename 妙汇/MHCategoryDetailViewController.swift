@@ -10,6 +10,7 @@ import UIKit
 
 class MHCategoryDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var topFilterView: MHFilterView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,6 +33,7 @@ class MHCategoryDetailViewController: UIViewController, UITableViewDelegate, UIT
         let tag = self.getTagWithUrl(url: (navModel?.url)!)
         MHCategoryDetailParser().requestNewData(type: tag!) { (list) in
             self.dataList = list?.goods
+            self.topFilterView.priceList = list?.filter
             self.tableView.reloadData()
         }
         

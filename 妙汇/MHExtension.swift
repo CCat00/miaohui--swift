@@ -98,6 +98,45 @@ extension UIView {
     }
 }
 
+// MARK: - 
+
+//@IBDesignable
+extension UIView {
+   @IBInspectable var cornerRadius: CGFloat {
+        set {
+            guard cornerRadius > 0 else {
+                return
+            }
+            self.layer.cornerRadius = cornerRadius
+            self.layer.masksToBounds = true
+        }
+        get {
+            return self.layer.cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            guard borderWidth > 0 else {
+                return
+            }
+            self.layer.borderWidth = borderWidth
+        }
+        get {
+            return self.layer.borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor {
+        set {
+            self.layer.borderColor = borderColor.cgColor
+        }
+        get {
+            return UIColor.init(cgColor: self.layer.borderColor!)
+        }
+    }
+}
+
 // MARK: - UIImage
 
 extension UIImage {

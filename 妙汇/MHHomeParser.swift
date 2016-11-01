@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 import HandyJSON
 
 class MHHomeParser: NSObject {
