@@ -166,23 +166,17 @@ class MHFieldOfViewCategoryView: UIView {
         
         if isOpen {
             //隐藏
-            
-            UIView.animate(withDuration: 0.3,
-                           animations: {
-                            
-                            self.arrowImgView.transform = CGAffineTransform.identity
-                            self.collectionView.selfH = 0
-                            
-                },
-                           completion: { (_) in
-                            self.maskView_black.alpha = 0
-                            self.maskView_black.removeFromSuperview()
-                            self.isOpen = false
-                            self.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
-                            self.segmentedControl.isHidden = false
-                            self.titleLabel.removeFromSuperview()
+            UIView.animate(withDuration: 0.3, animations: {
+                    self.arrowImgView.transform = CGAffineTransform.identity
+                    self.collectionView.selfH = 0
+                }, completion: { (_) in
+                    self.maskView_black.alpha = 0
+                    self.maskView_black.removeFromSuperview()
+                    self.isOpen = false
+                    self.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
+                    self.segmentedControl.isHidden = false
+                    self.titleLabel.removeFromSuperview()
             })
-            
             
         } else {
             //展开
@@ -199,21 +193,13 @@ class MHFieldOfViewCategoryView: UIView {
                  titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15)]
             )
             
-            
-            UIView.animate(withDuration: 0.3,
-                           animations: { 
-                            
-                            self.arrowImgView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-                           self.collectionView.selfH = self.collectionViewH
-                            
-                },
-                           completion: { (_) in
-                            
-                            self.isOpen = true
+            UIView.animate(withDuration: 0.3, animations: {
+                self.arrowImgView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                self.collectionView.selfH = self.collectionViewH
+                }, completion: { (_) in
+                    self.isOpen = true
             })
-            
         }
-        
     }
     
 }
