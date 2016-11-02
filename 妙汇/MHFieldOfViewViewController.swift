@@ -13,7 +13,10 @@ class MHFieldOfViewViewController: UIViewController {
     @IBOutlet weak var topBgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    
     fileprivate var dataList: [MHSpecialTopic]?
+    
+    fileprivate var categoryView: MHFieldOfViewCategoryView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +24,28 @@ class MHFieldOfViewViewController: UIViewController {
         self.setup()
         self.setupRefresh()
         
+        //请求导航数据
+        MHFieldOfViewParser.requestCategoryData { (data) in
+            guard data != nil else { return }
+            self.categoryView = MHFieldOfViewCategoryView.init(model: data!, maskViewBgView: self.view)
+            self.categoryView!.translatesAutoresizingMaskIntoConstraints = false
+            self.topBgView.addSubview(self.categoryView!)
+            
+            NSLayoutConstraint.activate(
+                [self.categoryView!.leftAnchor.constraint(equalTo: self.topBgView.leftAnchor),
+                 self.categoryView!.topAnchor.constraint(equalTo: self.topBgView.topAnchor),
+                 self.categoryView!.bottomAnchor.constraint(equalTo: self.topBgView.bottomAnchor),
+                 self.categoryView!.rightAnchor.constraint(equalTo: self.topBgView.rightAnchor)]
+            )
+        }
+        
         tableView.refresh_header()?.beginRefreshing()
     }
     
+    
     private func setup() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "More"), style: .plain, target: self, action: #selector(MHFieldOfViewViewController.rightNavBarItemAction))
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 260

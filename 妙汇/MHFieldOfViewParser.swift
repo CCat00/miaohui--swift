@@ -83,6 +83,48 @@ class MHFieldOfViewParser: NSObject {
         }
         
     }
+    
+    /// 请求视野界面上的分类列表
+    static func requestCategoryData(handler: @escaping (MHFieldOfViewCategoryResponse?) -> Void) {
+        
+        if USE_NETWORK {
+            
+            let header: HTTPHeaders = [
+                "timeSp" : "1477983606",
+                "sign" : "95864fa4058633a2f4b77b16afa72629"
+            ]
+            MHNetwork.POST("http://api.magicwe.com/Article/getNavigator", para: nil, headers: header) { (jsonString) in
+                if (jsonString != nil) {
+                    
+                    let model = JSONDeserializer<MHFieldOfViewCategoryResponse>.deserializeFrom(json: jsonString)
+                    handler(model)
+                } else {
+                    handler(nil)
+                }
+            }
+            
+        } else {
+            
+            
+            let jsonPath = Bundle.main.path(forResource: "fieldOfView_category", ofType: ".json")
+            
+            let jsonURL = URL.init(fileURLWithPath: jsonPath!)
+            
+            do {
+                let jsonData = try Data.init(contentsOf: jsonURL)
+                
+                let jsonString = String.init(data: jsonData, encoding: String.Encoding.utf8)
+                
+                let model = JSONDeserializer<MHFieldOfViewCategoryResponse>.deserializeFrom(json: jsonString)
+                handler(model)
+                
+            } catch {
+                handler(nil)
+            }
+            
+        }
+        
+    }
 }
 
 

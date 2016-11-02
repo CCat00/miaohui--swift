@@ -47,3 +47,32 @@ class MHFieldOfViewModel: MHResponseModel {
     var specialTopicList: [MHSpecialTopic]?
     required init() {}
 }
+
+
+
+//{
+//    "resultCode": 1,
+//    "resultMsg": "成功",
+//    "tipsMsg": "",
+//    "navigator": [
+//    {
+//    "name": "全部",
+//    "url": "mwarticletag://0",
+//    "icon": "",
+//    "image": null
+//    },
+
+class MHFieldOfViewCategory: HandyJSON {
+    var name: String?
+    var url: String?
+    var icon: String?
+    var image: String?
+    
+    required init() {}
+}
+
+class MHFieldOfViewCategoryResponse: MHResponseModel {
+    var navigator: [MHFieldOfViewCategory]?
+    required init() {}
+}
+

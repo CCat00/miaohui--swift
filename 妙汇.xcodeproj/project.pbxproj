@@ -40,6 +40,8 @@
 		6843C4B71DB5BAF900CA881F /* MHHomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */; };
 		6843C4B91DB5BC0700CA881F /* MHHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4B81DB5BC0700CA881F /* MHHomeModel.swift */; };
 		6843C4BC1DB5BC8500CA881F /* MHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843C4BB1DB5BC8500CA881F /* MHNetwork.swift */; };
+		687054FB1DC9853400EF132D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 687054FA1DC9853400EF132D /* HMSegmentedControl.m */; };
+		687054FE1DC990C100EF132D /* MHFieldOfViewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687054FD1DC990C100EF132D /* MHFieldOfViewCategoryView.swift */; };
 		687A3E571DC0A142004D91B7 /* MHCategoryBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687A3E561DC0A142004D91B7 /* MHCategoryBtn.swift */; };
 		687A3E591DC0A310004D91B7 /* MHCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687A3E581DC0A310004D91B7 /* MHCategoryViewController.swift */; };
 		687A3E5B1DC0A54C004D91B7 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 687A3E5A1DC0A54C004D91B7 /* category.json */; };
@@ -66,6 +68,8 @@
 		68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */; };
 		68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D601DB62B70000BB94B /* MHConst.swift */; };
 		68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D631DB62F73000BB94B /* MHExtension.swift */; };
+		68E3A3521DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E3A3501DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift */; };
+		68E3A3531DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E3A3511DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib */; };
 		AF8723B8E24D9E1E8F1F4F60 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC5B976203B5D1AB84F385 /* Pods___.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +112,10 @@
 		6843C4B61DB5BAF900CA881F /* MHHomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeParser.swift; sourceTree = "<group>"; };
 		6843C4B81DB5BC0700CA881F /* MHHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHHomeModel.swift; sourceTree = "<group>"; };
 		6843C4BB1DB5BC8500CA881F /* MHNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHNetwork.swift; sourceTree = "<group>"; };
+		687054F91DC9853400EF132D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		687054FA1DC9853400EF132D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		687054FC1DC9864200EF132D /* MH-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MH-Bridge.h"; sourceTree = "<group>"; };
+		687054FD1DC990C100EF132D /* MHFieldOfViewCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFieldOfViewCategoryView.swift; sourceTree = "<group>"; };
 		687A3E561DC0A142004D91B7 /* MHCategoryBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCategoryBtn.swift; sourceTree = "<group>"; };
 		687A3E581DC0A310004D91B7 /* MHCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCategoryViewController.swift; sourceTree = "<group>"; };
 		687A3E5A1DC0A54C004D91B7 /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 		68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHNavItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		68BD0D601DB62B70000BB94B /* MHConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHConst.swift; sourceTree = "<group>"; };
 		68BD0D631DB62F73000BB94B /* MHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHExtension.swift; sourceTree = "<group>"; };
+		68E3A3501DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFOVCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		68E3A3511DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHFOVCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAFC5B976203B5D1AB84F385 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -232,6 +242,7 @@
 				6843C49D1DB4D87F00CA881F /* Info.plist */,
 				6843C4AB1DB5B52700CA881F /* PrefixHeader.pch */,
 				68BD0D601DB62B70000BB94B /* MHConst.swift */,
+				687054FC1DC9864200EF132D /* MH-Bridge.h */,
 			);
 			name = supportFiles;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 		6843C4A71DB5B49500CA881F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				687054F81DC9853400EF132D /* HMSegmentedControl */,
 				682D30311DBF67A50017CFDC /* HeartAnimationBtn */,
 				68120CA81DB9BA0C000CA19D /* PullRefresh */,
 				68120C621DB706F8000CA19D /* ADScrollView */,
@@ -350,6 +362,15 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		687054F81DC9853400EF132D /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				687054F91DC9853400EF132D /* HMSegmentedControl.h */,
+				687054FA1DC9853400EF132D /* HMSegmentedControl.m */,
+			);
+			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
 		687A3E541DC09E3F004D91B7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +404,9 @@
 			isa = PBXGroup;
 			children = (
 				68B087AB1DC87BBC009E3D8C /* MHFieldOfViewListTableViewCell.swift */,
+				687054FD1DC990C100EF132D /* MHFieldOfViewCategoryView.swift */,
+				68E3A3501DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift */,
+				68E3A3511DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib */,
 			);
 			name = FieldOfView;
 			sourceTree = "<group>";
@@ -480,6 +504,7 @@
 				68120C841DB8684F000CA19D /* MHHomeViewfieldItem.xib in Resources */,
 				68120C741DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib in Resources */,
 				682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */,
+				68E3A3531DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib in Resources */,
 				68120C681DB71C9D000CA19D /* MHHomeADTableViewCell.xib in Resources */,
 				68B087A11DC87740009E3D8C /* fieldOfView_category.json in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
@@ -548,6 +573,7 @@
 				687A3E591DC0A310004D91B7 /* MHCategoryViewController.swift in Sources */,
 				68120CB01DB9C053000CA19D /* MHRefresh.swift in Sources */,
 				68120C671DB71C9D000CA19D /* MHHomeADTableViewCell.swift in Sources */,
+				687054FB1DC9853400EF132D /* HMSegmentedControl.m in Sources */,
 				6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */,
 				6843C4B31DB5B83A00CA881F /* MHGoodsTableViewCell.swift in Sources */,
 				68120C761DB76B87000CA19D /* MHHomePromotionsItem.swift in Sources */,
@@ -572,6 +598,7 @@
 				68B087A71DC877E1009E3D8C /* MHFieldOfViewParser.swift in Sources */,
 				68120CAE1DB9BC32000CA19D /* MHRefreshCommon.swift in Sources */,
 				682D302E1DBF438B0017CFDC /* MHRefreshNormalFooter.swift in Sources */,
+				687054FE1DC990C100EF132D /* MHFieldOfViewCategoryView.swift in Sources */,
 				68120C801DB85DEC000CA19D /* MHVerticalADView.swift in Sources */,
 				687B57AE1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.swift in Sources */,
 				68120CAA1DB9BA37000CA19D /* MHRefreshHeader.swift in Sources */,
@@ -584,6 +611,7 @@
 				68B0879F1DC8703C009E3D8C /* MHFieldOfViewViewController.swift in Sources */,
 				68B087AE1DC880B7009E3D8C /* MHFieldOfViewDetailViewController.swift in Sources */,
 				687A3E571DC0A142004D91B7 /* MHCategoryBtn.swift in Sources */,
+				68E3A3521DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift in Sources */,
 				68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */,
 				6843C4B01DB5B68900CA881F /* MHHomeTableViewController.swift in Sources */,
 			);
@@ -717,6 +745,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ShouYueTechnology.miaohui.demo.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/妙汇/MH-Bridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -735,6 +764,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ShouYueTechnology.miaohui.demo.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/妙汇/MH-Bridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
