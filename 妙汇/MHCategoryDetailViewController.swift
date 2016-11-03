@@ -29,6 +29,7 @@ class MHCategoryDetailViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavBackItem()
         
         let tag = self.getTagWithUrl(url: (navModel?.url)!)
         MHCategoryDetailParser().requestNewData(type: tag!) { (list) in
