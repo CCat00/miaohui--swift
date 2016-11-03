@@ -21,6 +21,8 @@ class MHFieldOfViewDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavBackItem()
+        
         if model == nil { return }
         let url = URL.init(string: (model!.link_url)!)
         let request = URLRequest.init(url: url!)
