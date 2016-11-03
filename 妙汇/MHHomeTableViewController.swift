@@ -176,6 +176,7 @@ class MHHomeTableViewController: UITableViewController {
 
     /// 扫一扫
     @objc private func rightNavBarAction() {
-        
+        let scanVC = MHScanerViewController.init()
+        navigationController?.pushViewController(scanVC, animated: true)
     }
 }
