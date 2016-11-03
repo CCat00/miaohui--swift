@@ -17,8 +17,8 @@ class MHScanerViewController: UIViewController {
     }
     
     fileprivate func setup() {
-        hidesBottomBarWhenPushed = true
         title = "扫一扫"
+        setupNavBackItem()
     }
 
     override func didReceiveMemoryWarning() {
