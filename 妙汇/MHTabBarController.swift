@@ -14,19 +14,28 @@ class MHTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let images_normal = [
-            UIImage.init(named: "tab_home_wt"),
-            UIImage.init(named: "tab_Category_wt"),
-            UIImage.init(named: "tab_fieldOfView_wt"),
-            UIImage.init(named: "tab_cart_wt"),
-            UIImage.init(named: "tab_personal_wt"),
+            #imageLiteral(resourceName: "tab_home_wt"),
+            #imageLiteral(resourceName: "tab_Category_wt"),
+            #imageLiteral(resourceName: "tab_fieldOfView_wt"),
+            #imageLiteral(resourceName: "tab_cart_wt"),
+            #imageLiteral(resourceName: "tab_personal_wt")
+//            UIImage.init(named: "tab_Category_wt"),
+//            UIImage.init(named: "tab_fieldOfView_wt"),
+//            UIImage.init(named: "tab_cart_wt"),
+//            UIImage.init(named: "tab_personal_wt"),
             ]
         
         let images_selected = [
-            UIImage.init(named: "tab_home"),
-            UIImage.init(named: "tab_Category"),
-            UIImage.init(named: "tab_fieldOfView"),
-            UIImage.init(named: "tab_cart"),
-            UIImage.init(named: "tab_personal"),
+            #imageLiteral(resourceName: "tab_home"),
+            #imageLiteral(resourceName: "tab_Category"),
+            #imageLiteral(resourceName: "tab_fieldOfView"),
+            #imageLiteral(resourceName: "tab_cart"),
+            #imageLiteral(resourceName: "tab_personal")
+//            UIImage.init(named: "tab_home"),
+//            UIImage.init(named: "tab_Category"),
+//            UIImage.init(named: "tab_fieldOfView"),
+//            UIImage.init(named: "tab_cart"),
+//            UIImage.init(named: "tab_personal"),
             ]
         
         let titles = [
@@ -43,8 +52,8 @@ class MHTabBarController: UITabBarController {
             var img_selected = images_selected[index]
             let title = titles[index]
             
-            img_normal = img_normal?.withRenderingMode(.alwaysOriginal)
-            img_selected = img_selected?.withRenderingMode(.alwaysOriginal)
+            img_normal = img_normal.withRenderingMode(.alwaysOriginal)
+            img_selected = img_selected.withRenderingMode(.alwaysOriginal)
             
             value.title = title
             value.selectedImage = img_selected
