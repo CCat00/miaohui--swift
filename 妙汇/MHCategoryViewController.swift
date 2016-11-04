@@ -39,8 +39,12 @@ class MHCategoryViewController: UIViewController {
 //        let index = sender.tag - 100
 //        print("*****(sender.tag) = \(index)")
         
-        let mainSb = UIStoryboard.init(name: "Main", bundle: nil)
-        let detailVC = mainSb.instantiateViewController(withIdentifier: "MHCategoryDetailViewController") as! MHCategoryDetailViewController
+//        let mainSb = UIStoryboard.init(name: "Main", bundle: nil)
+//        let detailVC = mainSb.instantiateViewController(withIdentifier: "MHCategoryDetailViewController") as! MHCategoryDetailViewController
+        
+        //改进写法
+        let detailVC: MHCategoryDetailViewController = UIStoryboard.storyboard(.Main).instantiateViewController()
+        
         detailVC.navModel = sender.model
         navigationController?.pushViewController(detailVC, animated: true)
     }

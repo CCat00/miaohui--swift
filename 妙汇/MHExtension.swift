@@ -157,3 +157,47 @@ extension UIImage {
     }
 }
 
+// MARK: - Storyboard
+// http://swift.gg/2016/09/26/uistoryboard-safer-with-enums-protocol-extensions-and-generics/
+extension UIStoryboard {
+    enum Storyboard: String {
+        case Main
+    }
+
+    convenience init(_ storyboard: Storyboard, bundle: Bundle? = nil) {
+        self.init(name: storyboard.rawValue, bundle: bundle)
+    }
+    
+    //或者
+    class func storyboard(_ storyboard: Storyboard, bundle: Bundle? = nil) -> UIStoryboard
+    {
+        return UIStoryboard.init(name: storyboard.rawValue, bundle: bundle)
+    }
+    
+    //带上泛型
+    func instantiateViewController<T: UIViewController>() -> T where T: StoryboardIdentifiable
+    {
+        let vc = self.instantiateViewController(withIdentifier: T.storyboardIdentifier)
+        
+        guard vc is T else {
+            fatalError("Couldn’t instantiate view controller with identifier \(T.storyboardIdentifier)")
+        }
+        
+        return vc as! T
+    }
+}
+
+//返回类名字符串
+
+protocol StoryboardIdentifiable {
+    static var storyboardIdentifier: String { get }
+}
+
+extension StoryboardIdentifiable where Self: UIViewController {
+    static var storyboardIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UIViewController: StoryboardIdentifiable {}
+
