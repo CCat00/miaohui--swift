@@ -1,20 +1,86 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MHScanerViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MHScanerViewController" customModule="妙汇" customModuleProvider="target">
             <connections>
+                <outlet property="coverView" destination="Tou-MQ-FwU" id="ZkP-Qm-tIE"/>
+                <outlet property="scanBg" destination="0ze-UJ-Til" id="dAf-Fh-jJ7"/>
+                <outlet property="scanLine" destination="fp8-kb-DxH" id="EqU-2G-ODh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tou-MQ-FwU">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saobg" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-UJ-Til">
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="0ze-UJ-Til" secondAttribute="height" multiplier="1:1" id="lPj-Kg-Htx"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="扫一扫" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-kb-DxH">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="qp8-PW-RWx"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码放入框内，即可自动扫描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhO-LP-LrJ">
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njQ-F3-IAE">
+                            <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="cn8-la-wDZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="取消扫描"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancleScan:" destination="-1" eventType="touchUpInside" id="Ww6-Si-gNd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="fp8-kb-DxH" firstAttribute="centerX" secondItem="Tou-MQ-FwU" secondAttribute="centerX" id="3IN-bv-6SL"/>
+                        <constraint firstItem="0ze-UJ-Til" firstAttribute="top" secondItem="fp8-kb-DxH" secondAttribute="top" id="70w-Vd-BdV"/>
+                        <constraint firstItem="qhO-LP-LrJ" firstAttribute="centerX" secondItem="Tou-MQ-FwU" secondAttribute="centerX" id="Eey-22-7Mo"/>
+                        <constraint firstItem="njQ-F3-IAE" firstAttribute="leading" secondItem="Tou-MQ-FwU" secondAttribute="leading" constant="20" id="I4E-pm-0D8"/>
+                        <constraint firstItem="qhO-LP-LrJ" firstAttribute="top" secondItem="0ze-UJ-Til" secondAttribute="bottom" constant="5" id="LCB-id-ZWv"/>
+                        <constraint firstItem="0ze-UJ-Til" firstAttribute="top" secondItem="Tou-MQ-FwU" secondAttribute="top" constant="64" id="hmQ-oI-EW3"/>
+                        <constraint firstItem="njQ-F3-IAE" firstAttribute="top" secondItem="qhO-LP-LrJ" secondAttribute="bottom" constant="30" id="o22-Ay-new"/>
+                        <constraint firstItem="njQ-F3-IAE" firstAttribute="centerX" secondItem="Tou-MQ-FwU" secondAttribute="centerX" id="vin-ht-Lot"/>
+                        <constraint firstItem="0ze-UJ-Til" firstAttribute="leading" secondItem="fp8-kb-DxH" secondAttribute="leading" constant="-10" id="xaA-dk-PgF"/>
+                        <constraint firstItem="0ze-UJ-Til" firstAttribute="leading" secondItem="Tou-MQ-FwU" secondAttribute="leading" constant="50" id="xrh-CS-TiP"/>
+                        <constraint firstItem="0ze-UJ-Til" firstAttribute="centerX" secondItem="Tou-MQ-FwU" secondAttribute="centerX" id="zpv-9p-ZNn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Tou-MQ-FwU" secondAttribute="trailing" id="94x-i5-4SH"/>
+                <constraint firstItem="Tou-MQ-FwU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XfK-7t-91r"/>
+                <constraint firstItem="Tou-MQ-FwU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zwc-4p-947"/>
+                <constraint firstAttribute="bottom" secondItem="Tou-MQ-FwU" secondAttribute="bottom" id="dip-if-CoV"/>
+            </constraints>
+            <point key="canvasLocation" x="28" y="54"/>
         </view>
     </objects>
+    <resources>
+        <image name="saobg" width="220" height="220"/>
+        <image name="扫一扫" width="224" height="8"/>
+    </resources>
 </document>

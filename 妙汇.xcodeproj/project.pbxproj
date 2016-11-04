@@ -43,6 +43,8 @@
 		6868B5C11DCB21ED00CA79E8 /* MHScanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868B5BF1DCB21ED00CA79E8 /* MHScanerViewController.swift */; };
 		6868B5C21DCB21ED00CA79E8 /* MHScanerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6868B5C01DCB21ED00CA79E8 /* MHScanerViewController.xib */; };
 		6868B5C41DCB236300CA79E8 /* MHCommonSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868B5C31DCB236300CA79E8 /* MHCommonSetting.swift */; };
+		6868B5C71DCB45E100CA79E8 /* MHScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868B5C51DCB45E100CA79E8 /* MHScanResultViewController.swift */; };
+		6868B5C81DCB45E100CA79E8 /* MHScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6868B5C61DCB45E100CA79E8 /* MHScanResultViewController.xib */; };
 		687054FB1DC9853400EF132D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 687054FA1DC9853400EF132D /* HMSegmentedControl.m */; };
 		687054FE1DC990C100EF132D /* MHFieldOfViewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687054FD1DC990C100EF132D /* MHFieldOfViewCategoryView.swift */; };
 		687A3E571DC0A142004D91B7 /* MHCategoryBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687A3E561DC0A142004D91B7 /* MHCategoryBtn.swift */; };
@@ -118,6 +120,8 @@
 		6868B5BF1DCB21ED00CA79E8 /* MHScanerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHScanerViewController.swift; sourceTree = "<group>"; };
 		6868B5C01DCB21ED00CA79E8 /* MHScanerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHScanerViewController.xib; sourceTree = "<group>"; };
 		6868B5C31DCB236300CA79E8 /* MHCommonSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHCommonSetting.swift; sourceTree = "<group>"; };
+		6868B5C51DCB45E100CA79E8 /* MHScanResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHScanResultViewController.swift; sourceTree = "<group>"; };
+		6868B5C61DCB45E100CA79E8 /* MHScanResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHScanResultViewController.xib; sourceTree = "<group>"; };
 		687054F91DC9853400EF132D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		687054FA1DC9853400EF132D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		687054FC1DC9864200EF132D /* MH-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MH-Bridge.h"; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 				6843C4AF1DB5B68900CA881F /* MHHomeTableViewController.swift */,
 				6868B5BF1DCB21ED00CA79E8 /* MHScanerViewController.swift */,
 				6868B5C01DCB21ED00CA79E8 /* MHScanerViewController.xib */,
+				6868B5C51DCB45E100CA79E8 /* MHScanResultViewController.swift */,
+				6868B5C61DCB45E100CA79E8 /* MHScanResultViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				687A3E5B1DC0A54C004D91B7 /* category.json in Resources */,
+				6868B5C81DCB45E100CA79E8 /* MHScanResultViewController.xib in Resources */,
 				687B57AF1DC6E1A9007B136F /* MHCustomFilterPriceTableViewCell.xib in Resources */,
 				687A3E651DC1A0BA004D91B7 /* category_new.json in Resources */,
 				6843C49C1DB4D87F00CA881F /* LaunchScreen.storyboard in Resources */,
@@ -582,6 +589,7 @@
 			files = (
 				687A3E591DC0A310004D91B7 /* MHCategoryViewController.swift in Sources */,
 				68120CB01DB9C053000CA19D /* MHRefresh.swift in Sources */,
+				6868B5C71DCB45E100CA79E8 /* MHScanResultViewController.swift in Sources */,
 				68120C671DB71C9D000CA19D /* MHHomeADTableViewCell.swift in Sources */,
 				687054FB1DC9853400EF132D /* HMSegmentedControl.m in Sources */,
 				6843C4921DB4D87F00CA881F /* AppDelegate.swift in Sources */,
