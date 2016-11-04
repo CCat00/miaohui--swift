@@ -69,9 +69,9 @@ class MHVerticalADView: UIView, UIScrollViewDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         scrollView.frame = self.bounds
-        contentView1.frame = CGRect.init(x: 0, y: 0, width: selfW, height: selfH)
-        contentView2.frame = CGRect.init(x: 0, y: selfH, width: selfW, height: selfH)
-        scrollView.contentSize = CGSize.init(width: selfW, height: selfH * 2.0)
+        contentView1.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
+        contentView2.frame = CGRect.init(x: 0, y: frame.height, width: frame.width, height: frame.height)
+        scrollView.contentSize = CGSize.init(width: frame.width, height: frame.height * 2.0)
     }
     
     // MARK: - Private
@@ -88,7 +88,7 @@ class MHVerticalADView: UIView, UIScrollViewDelegate {
     }
     
     private func updateContent() {
-        scrollView.setContentOffset(CGPoint.init(x: 0, y: selfH), animated: true)
+        scrollView.setContentOffset(CGPoint.init(x: 0, y: frame.height), animated: true)
     }
     
     // MARK: - UIScrollViewDelegate

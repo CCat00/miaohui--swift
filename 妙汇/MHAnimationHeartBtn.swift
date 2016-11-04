@@ -66,8 +66,8 @@ class MHAnimationHeartBtn: UIButton {
     private func showBigHeart() {
         
         bigRedHeart.frame = CGRect.init(
-            x: selfX - (bigRedHeartStartW - selfW) / 2.0,
-            y: selfY - bigRedHeartStartH - topMargin,
+            x: frame.minX - (bigRedHeartStartW - frame.width) / 2.0,
+            y: frame.minY - bigRedHeartStartH - topMargin,
             width: bigRedHeartStartW,
             height: bigRedHeartStartH)
         
@@ -110,15 +110,15 @@ class MHAnimationHeartBtn: UIButton {
         
         let scale: CGFloat = 0.7
         
-        heart_broken_left.selfW = 24.0 * scale
-        heart_broken_left.selfH = 38.0 * scale
-        heart_broken_left.selfX = self.selfX - (heart_broken_left.selfW - self.selfW / 2.0)
-        heart_broken_left.selfY = selfY - bigRedHeartEndH - topMargin
+        heart_broken_left.frame.size.width = 24.0 * scale
+        heart_broken_left.frame.size.height = 38.0 * scale
+        heart_broken_left.frame.origin.x = self.frame.minX - (heart_broken_left.frame.width - self.frame.width / 2.0)
+        heart_broken_left.frame.origin.y = frame.minY - bigRedHeartEndH - topMargin
         
-        heart_broken_right.selfW = 24.0 * scale
-        heart_broken_right.selfH = 38.0 * scale
-        heart_broken_right.selfX = heart_broken_left.selfR - 5.0
-        heart_broken_right.selfY = heart_broken_left.selfY
+        heart_broken_right.frame.size.width = 24.0 * scale
+        heart_broken_right.frame.size.height = 38.0 * scale
+        heart_broken_right.frame.origin.x = heart_broken_left.frame.maxX - 5.0
+        heart_broken_right.frame.origin.y = heart_broken_left.frame.minY
         
         
         
@@ -129,12 +129,12 @@ class MHAnimationHeartBtn: UIButton {
                        animations: {
                         
                         // 下降
-                        self.heart_broken_left.selfY += 20.0
-                        self.heart_broken_right.selfY += 20.0
+                        self.heart_broken_left.frame.origin.y += 20.0
+                        self.heart_broken_right.frame.origin.y += 20.0
                         
                         // 分开
-                        self.heart_broken_left.selfX -= 7
-                        self.heart_broken_right.selfX += 7
+                        self.heart_broken_left.frame.origin.x -= 7
+                        self.heart_broken_right.frame.origin.x += 7
                         
                         
                         //缩小

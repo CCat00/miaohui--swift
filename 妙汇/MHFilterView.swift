@@ -100,10 +100,10 @@ class MHFilterView: UIView {
         self.removeGestureRecognizer(tap)
         self.addGestureRecognizer(tap)
         
-        maskBgView.frame = CGRect.init(x: selfX, y: selfB, width: selfW, height: SCREEN_HEIGHT - selfB)
+        maskBgView.frame = CGRect.init(x: frame.minX, y: frame.maxY, width: frame.width, height: SCREEN_HEIGHT - frame.maxY)
         
         let tableViewH: CGFloat = 0.0
-        tableView.frame = CGRect.init(x: 0, y: 0, width: maskBgView.selfW, height: tableViewH)
+        tableView.frame = CGRect.init(x: 0, y: 0, width: maskBgView.frame.width, height: tableViewH)
     }
     
     @objc fileprivate func tapGes() {
@@ -114,7 +114,7 @@ class MHFilterView: UIView {
             UIView.animate(
                 withDuration: 0.3,
                 animations: {
-                    self.tableView.selfH = 0
+                    self.tableView.frame.size.height = 0
                     self.indicateArrow.transform = CGAffineTransform.identity
                 },
                 completion: { (_) in
@@ -138,7 +138,7 @@ class MHFilterView: UIView {
                 withDuration: 0.3,
                 animations: { 
                     
-                    self.tableView.selfH = CGFloat(44.0 * CGFloat(self.priceList!.price!.count + 1))
+                    self.tableView.frame.size.height = CGFloat(44.0 * CGFloat(self.priceList!.price!.count + 1))
                     self.indicateArrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
                     
                 },

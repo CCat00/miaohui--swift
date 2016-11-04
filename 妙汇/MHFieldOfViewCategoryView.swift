@@ -111,7 +111,7 @@ class MHFieldOfViewCategoryView: UIView {
     var maskViewBgView: UIView?
     /// 遮罩
     private lazy var maskView_black: UIView = {
-        let view = UIView.init(frame: CGRect.init(x: self.selfX, y: self.selfB, width: self.selfW, height: SCREEN_HEIGHT - self.selfB))
+        let view = UIView.init(frame: CGRect.init(x: self.frame.minX, y: self.frame.maxY, width: self.frame.width, height: SCREEN_HEIGHT - self.frame.maxY))
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.3)
         view.addSubview(self.collectionView)
         
@@ -133,7 +133,7 @@ class MHFieldOfViewCategoryView: UIView {
     private let itemSpacing: CGFloat = 0.5
     private let columns = 5
     private var itemSize: CGSize {
-        let width: CGFloat = (selfW - CGFloat(columns - 1) * itemSpacing) / CGFloat(columns)
+        let width: CGFloat = (frame.width - CGFloat(columns - 1) * itemSpacing) / CGFloat(columns)
         let height: CGFloat = 37
         return CGSize.init(width: width, height: height)
     }
@@ -152,7 +152,7 @@ class MHFieldOfViewCategoryView: UIView {
         layout.itemSize = self.itemSize
         layout.minimumLineSpacing = self.itemSpacing
         layout.minimumInteritemSpacing = self.itemSpacing
-        let frame = CGRect.init(x: self.selfX, y: 0, width: self.selfW, height: 0)
+        let frame = CGRect.init(x: self.frame.minX, y: 0, width: self.frame.width, height: 0)
         let collectionView = UICollectionView.init(frame: frame, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -168,7 +168,7 @@ class MHFieldOfViewCategoryView: UIView {
             //隐藏
             UIView.animate(withDuration: 0.3, animations: {
                     self.arrowImgView.transform = CGAffineTransform.identity
-                    self.collectionView.selfH = 0
+                    self.collectionView.frame.size.height = 0
                 }, completion: { (_) in
                     self.maskView_black.alpha = 0
                     self.maskView_black.removeFromSuperview()
@@ -195,7 +195,7 @@ class MHFieldOfViewCategoryView: UIView {
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.arrowImgView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-                self.collectionView.selfH = self.collectionViewH
+                self.collectionView.frame.size.height = self.collectionViewH
                 }, completion: { (_) in
                     self.isOpen = true
             })
