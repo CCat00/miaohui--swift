@@ -27,7 +27,7 @@ enum MHADScrollViewImageType {
     @objc optional func didClickImage(index: Int, view: MHADScrollView) -> Void
 }
 
-class MHADScrollView: UIView, UIScrollViewDelegate{
+class MHADScrollView: UIView, UIScrollViewDelegate, CAAnimationDelegate{
     
     // MARK: - Properties
     
@@ -279,17 +279,28 @@ class MHADScrollView: UIView, UIScrollViewDelegate{
             
             /// 立方体动画
             let cube = CATransition.init()
+            cube.delegate = self
             cube.type = "cube"
             cube.duration = duration
             cube.subtype = kCATransitionFromRight
             self.currentImageView?.image = self.rightImageView?.image
             self.currentImageView?.layer.add(cube, forKey: "cube")
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(duration)*1000), execute: {
-                self.scrollView?.setContentOffset(CGPoint.init(x: self.imageViewW * 2.0, y: 0.0), animated: false)
-                self.updateContent()
-            })
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(duration)*1000), execute: {
+//                
+//                self.currentImageView?.layer.removeAnimation(forKey: "cube")
+//                self.scrollView?.setContentOffset(CGPoint.init(x: self.imageViewW * 2.0, y: 0.0), animated: false)
+//                self.updateContent()
+//                
+//            })
         }
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        self.currentImageView?.layer.removeAnimation(forKey: "cube")
+        self.scrollView?.setContentOffset(CGPoint.init(x: self.imageViewW * 2.0, y: 0.0), animated: false)
+        self.updateContent()
     }
     
     // MARK: - UIScrollViewDelegate
@@ -331,127 +342,13 @@ class MHADScrollView: UIView, UIScrollViewDelegate{
             self.startTimer()
         }
     }
-    
-
-//    func transform3D() {
-//        
-//        let disZ: CGFloat = 1000.0
-//        
-//        currentImageView?.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
-//        
-//        //本次偏移距离
-//        let currentOffset = scrollView!.contentOffset.x - imageViewW
-//        
-//        //本次偏移角度
-//        let deltaAngle = currentOffset/imageViewW * CGFloat.pi/2;
-//        
-//        //向屏幕前方移动
-//        let move = CATransform3DMakeTranslation(0, 0, imageViewW/2.0)
-//        
-//        //旋转
-//        let rotate = CATransform3DMakeRotation(-deltaAngle, 0, 1, 0)
-//        
-//        //平移
-//        let plaintMove = CATransform3DMakeTranslation(currentOffset, 0, 0)
-//        
-//        //向屏幕后方移动
-//        let back = CATransform3DMakeTranslation(0, 0, -imageViewW/2.0);
-//        
-//        //连接
-//        let concat = CATransform3DConcat(CATransform3DConcat(move, CATransform3DConcat(rotate, plaintMove)),back);
-//        
-//        let point = CGPoint.init(x: currentOffset / 2.0, y: imageViewH)
-//        
-//        let transform = CATransform3DPerspect(t: concat, center: point, disZ: disZ)
-//        
-//        //添加变幻特效
-//        currentImageView!.layer.transform = transform
-//        
-//        
-//        //*******************************************
-//        
-//        rightImageView?.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
-//        
-//        //向屏幕前方移动
-//        let move2 = CATransform3DMakeTranslation(0, 0, imageViewW/2.0);
-//        
-//        //旋转
-//        let rotate2 = CATransform3DMakeRotation(-deltaAngle+CGFloat.pi/2.0, 0, 1, 0);
-//        
-//        //平移
-//        let plaintMove2 = CATransform3DMakeTranslation( currentOffset-imageViewW, 0, 0);
-//        
-//        //向屏幕后方移动
-//        let back2 = CATransform3DMakeTranslation(0, 0, -imageViewW/2.0);
-//        
-//        //拼接
-//        let concat2 = CATransform3DConcat( CATransform3DConcat(move2, CATransform3DConcat(rotate2, plaintMove2)),back2);
-//        
-//        let point2 = CGPoint.init(x: imageViewW / 2.0 + currentOffset / 2.0, y: imageViewH)
-//        
-//        let transform2 = CATransform3DPerspect(t: concat2, center: point2, disZ: disZ)
-//
-//        
-//        //添加变幻特效
-//        rightImageView!.layer.transform = transform2;
-//        
-//        
-//        //************************************
-//        
-//        
-//        //设置锚点
-//        leftImageView?.layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
-//        
-//        //向屏幕前方移动
-//        let move3 = CATransform3DMakeTranslation(0, 0, imageViewW/2.0);
-//        
-//        //旋转
-//        let rotate3 = CATransform3DMakeRotation(-deltaAngle-CGFloat.pi / 2.0, 0, 1, 0);
-//        
-//        //平移
-//        let plaintMove3 = CATransform3DMakeTranslation( currentOffset+imageViewW, 0, 0);
-//        
-//        //向屏幕后方移动
-//        let back3 = CATransform3DMakeTranslation(0, 0, -imageViewW/2.0);
-//        
-//        //拼接
-//        let concat3 = CATransform3DConcat(CATransform3DConcat(move3, CATransform3DConcat(rotate3, plaintMove3)),back3);
-//        
-//        let transform3 = CATransform3DPerspect(t: concat3, center: CGPoint.init(x: -imageViewW/2.0+currentOffset/2.0, y: imageViewH), disZ: disZ);
-//
-//        leftImageView?.layer.transform = transform3
-//        
-//    }
-//    
-//    func identityTransform3D() {
-//        leftImageView?.layer.transform = CATransform3DIdentity
-//        currentImageView?.layer.transform = CATransform3DIdentity
-//        rightImageView?.layer.transform = CATransform3DIdentity
-//    }
-//    
-//    //3D透视函数
-//    func CATransform3DMakePerspective(center: CGPoint, disZ: CGFloat) -> CATransform3D {
-//        
-//        let transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
-//        let transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
-//        var scale = CATransform3DIdentity;
-//        scale.m34 = -1.0/disZ;
-//        return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack);
-//    }
-//    
-//    
-//    func CATransform3DPerspect(t: CATransform3D, center: CGPoint, disZ: CGFloat) -> CATransform3D {
-//        return CATransform3DConcat(t, CATransform3DMakePerspective(center: center, disZ: disZ));
-//    }
-
- 
-
 }
+
 
 extension UIImageView {
     
     /// 加载图片
-    ///（如果urlString为空，就加载imgOrPlaceholder，如果urlString就加载网络图片，这时，如图imgOrPlaceholder不为空，就当做默认图）
+    ///（如果urlString为空，就加载imgOrPlaceholder，如果urlString就加载网络图片，这时，如图imgOrPlaceholder不为空
     ///
     /// - parameter imgOrPlaceholder: 图片
     /// - parameter urlString:        url
