@@ -77,6 +77,9 @@
 		68BD0D5F1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */; };
 		68BD0D611DB62B70000BB94B /* MHConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D601DB62B70000BB94B /* MHConst.swift */; };
 		68BD0D641DB62F73000BB94B /* MHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BD0D631DB62F73000BB94B /* MHExtension.swift */; };
+		68CCD4B81DD1B661004AF803 /* 首页gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68CCD4B51DD1B661004AF803 /* 首页gif.gif */; };
+		68CCD4B91DD1B661004AF803 /* 分类gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68CCD4B61DD1B661004AF803 /* 分类gif.gif */; };
+		68CCD4BA1DD1B661004AF803 /* 视野gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68CCD4B71DD1B661004AF803 /* 视野gif.gif */; };
 		68E3A3521DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E3A3501DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift */; };
 		68E3A3531DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68E3A3511DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib */; };
 		AF8723B8E24D9E1E8F1F4F60 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFC5B976203B5D1AB84F385 /* Pods___.framework */; };
@@ -160,6 +163,9 @@
 		68BD0D5D1DB623EC000BB94B /* MHNavItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHNavItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		68BD0D601DB62B70000BB94B /* MHConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHConst.swift; sourceTree = "<group>"; };
 		68BD0D631DB62F73000BB94B /* MHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHExtension.swift; sourceTree = "<group>"; };
+		68CCD4B51DD1B661004AF803 /* 首页gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "首页gif.gif"; sourceTree = "<group>"; };
+		68CCD4B61DD1B661004AF803 /* 分类gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "分类gif.gif"; sourceTree = "<group>"; };
+		68CCD4B71DD1B661004AF803 /* 视野gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "视野gif.gif"; sourceTree = "<group>"; };
 		68E3A3501DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFOVCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		68E3A3511DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHFOVCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAFC5B976203B5D1AB84F385 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +259,9 @@
 		6843C4A31DB4DB9F00CA881F /* supportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				68CCD4B51DD1B661004AF803 /* 首页gif.gif */,
+				68CCD4B61DD1B661004AF803 /* 分类gif.gif */,
+				68CCD4B71DD1B661004AF803 /* 视野gif.gif */,
 				6855A8621DD1AE38009320F0 /* 视野.png */,
 				6855A8631DD1AE38009320F0 /* 首页.png */,
 				6855A8641DD1AE38009320F0 /* 分类界面.png */,
@@ -534,13 +543,16 @@
 				68120C741DB764BA000CA19D /* MHHomePromotionsTableViewCell.xib in Resources */,
 				6855A8691DD1AE38009320F0 /* 分类详情.png in Resources */,
 				682D30301DBF439C0017CFDC /* MHRefreshNormalFooter.xib in Resources */,
+				68CCD4B81DD1B661004AF803 /* 首页gif.gif in Resources */,
 				6868B5C21DCB21ED00CA79E8 /* MHScanerViewController.xib in Resources */,
+				68CCD4B91DD1B661004AF803 /* 分类gif.gif in Resources */,
 				68E3A3531DC9D1B6005CE0CE /* MHFOVCategoryCollectionViewCell.xib in Resources */,
 				68120C681DB71C9D000CA19D /* MHHomeADTableViewCell.xib in Resources */,
 				6855A8661DD1AE38009320F0 /* 视野.png in Resources */,
 				68B087A11DC87740009E3D8C /* fieldOfView_category.json in Resources */,
 				6843C4991DB4D87F00CA881F /* Assets.xcassets in Resources */,
 				68BD0D5B1DB622DB000BB94B /* MHHomeNavigatorTableViewCell.xib in Resources */,
+				68CCD4BA1DD1B661004AF803 /* 视野gif.gif in Resources */,
 				6843C4971DB4D87F00CA881F /* Main.storyboard in Resources */,
 				68120CAC1DB9BA45000CA19D /* MHRefreshNormalHeader.xib in Resources */,
 				6855A8671DD1AE38009320F0 /* 首页.png in Resources */,
