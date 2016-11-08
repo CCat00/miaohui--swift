@@ -5,10 +5,9 @@
 
 效果图如下：
 
-![首页](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/首页.png)
-![分类界面](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/分类界面.png)
-![分类详情](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/分类详情.png)
-![视野](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/视野.png)
+![首页](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/首页gif.gif)
+![分类详情](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/分类gif.gif)
+![视野](https://github.com/Hanwp/miaohui--swift/blob/master/妙汇/视野gif.gif)
 
 
 >注意：该项目只是为了学习、交流。有什么问题，可以给我提issue或者QQ:1019260351，email:hw1627@163.com
