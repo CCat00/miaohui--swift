@@ -45,6 +45,7 @@ class MHRefreshHeader: MHRefreshBase {
             UIView.animate(
                 withDuration: MHRefreshAnimationDuration,
                 animations: {
+                    // FIXME:  insetTDelta 有时是nil
                     self.scrollView!.contentInset.top += self.insetTDelta!
                 },
                 completion: { (completed) in
